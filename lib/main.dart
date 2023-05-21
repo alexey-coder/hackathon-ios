@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/screens/feed/feed_provider.dart';
+import 'package:maps/screens/splash_screen.dart';
 import 'package:maps/screens/tab_controller.dart';
 import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +29,11 @@ class App extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        initialRoute: 'main',
-        routes: {'main': (_) => const MyTabController()},
+        initialRoute: 'splash',
+        routes: {
+          'splash': (_) => const SplashScreen(),
+          'tab': (_) => const MyTabController()
+        },
         supportedLocales: AppLocalizations.supportedLocales);
   }
 }
