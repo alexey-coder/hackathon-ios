@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maps/screens/map/saech_text_field.dart';
+import 'package:maps/screens/map/search_text_field.dart';
 
 class MapSheetScren extends StatelessWidget {
   const MapSheetScren({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
+import 'package:maps/localization.dart';
 
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -21,7 +22,9 @@ class SearchTextField extends StatelessWidget {
               child: TextField(
                   controller: controller,
                   style: const TextStyle(fontSize: 16),
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
+                    hintText:
+                        Localization.shared.locale.search_by_organizations,
                     border: InputBorder.none,
                     isDense: true,
                   )))
