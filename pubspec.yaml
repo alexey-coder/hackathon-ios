@@ -45,6 +45,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  flutter_gen_runner:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -81,12 +83,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: DeeDee
+      fonts:
+        - asset: fonts/DeeDee.ttf
+          weight: 400
+        - asset: fonts/DeeDeeLight.ttf
+          weight: 300
+        - asset: fonts/DeeDee-Bold.ttf
+          weight: 700
+        - asset: fonts/DeeDeeHeavy.ttf
+          weight: 900
+        - asset: fonts/DeeDeeThin.ttf
+          weight: 100
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
