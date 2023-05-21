@@ -12,17 +12,30 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage artSchools =
+      AssetGenImage('assets/art_schools.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
   static const AssetGenImage education = AssetGenImage('assets/education.png');
   static const AssetGenImage main = AssetGenImage('assets/main.png');
   static const AssetGenImage map = AssetGenImage('assets/map.png');
+  static const AssetGenImage musicalSchools =
+      AssetGenImage('assets/musical_schools.png');
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [courses, education, main, map, pin, profile, search];
+  List<AssetGenImage> get values => [
+        artSchools,
+        courses,
+        education,
+        main,
+        map,
+        musicalSchools,
+        pin,
+        profile,
+        search
+      ];
 }
 
 class AssetGenImage {
