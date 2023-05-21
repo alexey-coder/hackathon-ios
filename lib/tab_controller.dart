@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/map_screen.dart';
 import 'package:maps/tab_provider.dart';
 import 'package:provider/provider.dart';
 import 'app_tab_bar.dart';
@@ -23,7 +24,7 @@ class MyTabController extends StatelessWidget {
       case MyTab.courses:
         return const Text('Курсы');
       case MyTab.map:
-        return const Text('Карта');
+        return MapScreen();
       case MyTab.profile:
         return const Text('Профиль');
     }
