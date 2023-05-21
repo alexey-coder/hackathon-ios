@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maps/tab_controller.dart';
-import 'package:maps/tab_provider.dart';
+import 'package:maps/screens/tab_controller.dart';
+import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

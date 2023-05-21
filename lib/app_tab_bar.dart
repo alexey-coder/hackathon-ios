@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/localization.dart';
-import 'package:maps/tab_provider.dart';
+import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/gen/fonts.gen.dart';

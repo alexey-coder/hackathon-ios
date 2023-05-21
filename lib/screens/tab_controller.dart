@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maps/map_screen.dart';
-import 'package:maps/tab_provider.dart';
+import 'package:maps/screens/map_screen.dart';
+import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
-import 'app_tab_bar.dart';
+import '../app_tab_bar.dart';
 
 class MyTabController extends StatelessWidget {
   const MyTabController({super.key});
