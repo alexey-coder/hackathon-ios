@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/feed/feed.dart';
 import 'package:maps/screens/map_screen.dart';
 import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class MyTabController extends StatelessWidget {
   Widget buildBodyFor(MyTab tab) {
     switch (tab) {
       case MyTab.main:
-        return const Text('Главная');
+        return const FeedPage();
       case MyTab.teaching:
         return const Text('Обучение');
       case MyTab.courses:

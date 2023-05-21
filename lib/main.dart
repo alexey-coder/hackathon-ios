@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/feed/feed_provider.dart';
 import 'package:maps/screens/tab_controller.dart';
 import 'package:maps/providers/tab_provider.dart';
 import 'package:provider/provider.dart';
@@ -9,9 +10,10 @@ import 'localization.dart';
 
 void main() {
   setupServices();
-  runApp(MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => TabProvider())],
-      child: const App()));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => TabProvider()),
+    ChangeNotifierProvider(create: (_) => FeedProvider())
+  ], child: const App()));
 }
 
 class App extends StatelessWidget {
