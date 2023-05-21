@@ -18,10 +18,11 @@ class Assets {
   static const AssetGenImage map = AssetGenImage('assets/map.png');
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
+  static const AssetGenImage search = AssetGenImage('assets/search.png');
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [courses, education, main, map, pin, profile];
+      [courses, education, main, map, pin, profile, search];
 }
 
 class AssetGenImage {
