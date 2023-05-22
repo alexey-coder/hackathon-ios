@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../gen/assets.gen.dart';
+import 'main_title.dart';
 
 class BackButtonWithTitle extends StatelessWidget {
 
@@ -29,12 +29,7 @@ class BackButtonWithTitle extends StatelessWidget {
                       fit: BoxFit.fitWidth
                   )
               ),
-              Text(
-                  title,
-                  textAlign: TextAlign.left,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontWeight: FontWeight.bold)
-              ),
+              MainTitle(title: title),
             ]
             )
         )

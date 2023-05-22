@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maps/screens/common_widgets/feed_image.dart';
 import 'package:provider/provider.dart';
+import '../common_widgets/additional_details/additional_details_list.dart';
+import '../common_widgets/additional_details/additional_details_model.dart';
 import '../common_widgets/back_button_with_title.dart';
 import 'feed_details_prvider.dart';
 
@@ -20,7 +22,7 @@ class FeedDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var pro = context.watch<FeedDetailsProvider>()
+    var provider = context.watch<FeedDetailsProvider>();
 
     return Scaffold(
         body: SafeArea(
@@ -58,8 +60,11 @@ class FeedDetailsScreen extends StatelessWidget {
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(fontWeight: FontWeight.w100)
-                        )
+                        ),
                       ])
+                  ),
+                  Expanded(
+                      child: AdditionalDetailsList(additionalDetails: provider.detailsList)
                   )
         ]
     )
