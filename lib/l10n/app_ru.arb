@@ -4,5 +4,12 @@
     "courses": "Курсы",
     "map": "Карта",
     "profile": "Профиль",
-    "search_by_organizations": "Поиск по учреждениям"
+    "search_by_organizations": "Поиск по учреждениям",
+    "musical_schools": "Музыкальные школы",
+    "art_schools": "Художественные школы",
+    "museums": "Музеи",
+    "exhibitions": "Выставки",
+    "theaters": "Театры",
+    "children_art_schools": "Детские школы искусств",
+    "dance_schools": "Танцевальные школы"
 }

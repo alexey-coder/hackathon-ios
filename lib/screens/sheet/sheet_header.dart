@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maps/providers/sheet_provider.dart';
 import 'package:maps/screens/common_widgets/search_text_field.dart';
-import 'package:maps/screens/map/circle_button.dart';
+import 'package:maps/screens/sheet/reset_button.dart';
 import 'package:maps/screens/sheet/shevron.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +29,7 @@ class SheetHeader extends StatelessWidget {
                 sheetProvider.searchText.isNotEmpty)
               Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: CrossIconButton(onPressed: sheetProvider.resetText))
+                  child: ResetButton(onPressed: sheetProvider.resetText))
           ]))
     ]);
   }
