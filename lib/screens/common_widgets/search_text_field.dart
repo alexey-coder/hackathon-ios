@@ -3,12 +3,14 @@ import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/localization.dart';
 
 class SearchTextField extends StatelessWidget {
+  final TextEditingController controller;
   final bool focused;
   final Function(bool newValue) onFocusChange;
   final Function(String newValue) onTextChange;
 
   const SearchTextField(
       {Key? key,
+      required this.controller,
       required this.focused,
       required this.onFocusChange,
       required this.onTextChange})
@@ -16,6 +18,8 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.selection = TextSelection.fromPosition(
+        TextPosition(offset: controller.text.length));
     return Container(
         height: 40,
         decoration: BoxDecoration(
@@ -31,6 +35,7 @@ class SearchTextField extends StatelessWidget {
                   onFocusChange: onFocusChange,
                   child: TextField(
                       onChanged: onTextChange,
+                      controller: controller,
                       style: const TextStyle(fontSize: 16),
                       decoration: InputDecoration(
                         hintText:
