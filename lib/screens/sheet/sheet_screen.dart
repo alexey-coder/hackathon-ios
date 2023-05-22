@@ -50,7 +50,7 @@ class SheetScreen extends StatelessWidget {
 
   void hideSheet(SheetProvider provider) {
     if (provider.searchText.isEmpty) {
-      controller.animateTo(0.1,
+      controller.animateTo(0.6,
           duration: const Duration(milliseconds: 200), curve: Curves.linear);
     }
   }
