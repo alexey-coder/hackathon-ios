@@ -3,8 +3,8 @@ import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/screens/map/organization_type_cell.dart';
 import 'package:maps/screens/map/search_text_field.dart';
 
-class MapSheetScren extends StatelessWidget {
-  const MapSheetScren({super.key});
+class MapSheetScreen extends StatelessWidget {
+  const MapSheetScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class MapSheetScren extends StatelessWidget {
                             const Padding(padding: EdgeInsets.only(left: 8)),
                             OrganizationTypeCell(
                                 image: Assets.artSchools.image(),
-                                onPressed: () => {print('art schools')}),
+                                onPressed: () => {print('art schools')})
                           ])),
                       Padding(
                           padding: const EdgeInsets.only(
@@ -83,7 +83,7 @@ class MapSheetScren extends StatelessWidget {
                             const Padding(padding: EdgeInsets.only(left: 8)),
                             OrganizationTypeCell(
                                 image: Assets.danceSchools.image(),
-                                onPressed: () => {print('dance schools')}),
+                                onPressed: () => {print('dance schools')})
                           ]))
                     ])
                   ])));
