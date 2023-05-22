@@ -36,7 +36,9 @@ class FeedScreen extends StatelessWidget {
                       child: ListView.builder(
                           itemCount: movies.length,
                           itemBuilder: (_, index) {
-                            return FeedCard(onTap: () {});
+                            return FeedCard(
+                                width: MediaQuery.of(context).size.width,
+                                onTap: () {});
                           }))
                 ])));
   }

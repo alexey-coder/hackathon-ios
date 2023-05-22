@@ -1,10 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../gen/assets.gen.dart';
+import '../common_widgets/feed_image.dart';
 
 class FeedCard extends StatelessWidget {
   const FeedCard(
       {Key? key,
-        this.width = 140,
+        required this.width,
         required this.onTap})
       : super(key: key);
 
@@ -25,7 +26,6 @@ class FeedCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                // padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
@@ -50,19 +50,47 @@ class FeedCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontWeight: FontWeight.w100)
               ),
-              CachedNetworkImage(
-                width: 300,
-                height: 200,
+              FeedImage(
                 imageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
-                // placeholder: (context, url) => const CircularProgressIndicator(),
-                // errorWidget: (context, url, error) => const Icon(Icons.error),
+                height: 200,
+                text: "aaaa",
+                key: null,
               ),
+              const SizedBox(height: 8),
               Row(
-                  children: const [
-                    Icon(Icons.favorite, color: Colors.red, size: 30),
-                    Icon(Icons.favorite, color: Colors.red, size: 30),
-                    Icon(Icons.favorite, color: Colors.red, size: 30),
-                  ]
+                  children: [
+                    SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: Image(
+                            image: Assets.chat.image().image,
+                            fit: BoxFit.fitWidth
+                        ),
+                    ),
+                    const SizedBox(width: 8),
+                    const Text('12'),
+                    const SizedBox(width: 8),
+                    SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: Image(
+                          image: Assets.heart.image().image,
+                          fit: BoxFit.fitWidth
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    const Text('12'),
+                    const Spacer(),
+                    SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: Image(
+                          image: Assets.bookmark.image().image,
+                          fit: BoxFit.fitWidth
+                      ),
+                    ),
+                    const SizedBox(width: 8)
+                  ],
               ),
               const Divider(
                   color: Colors.black
