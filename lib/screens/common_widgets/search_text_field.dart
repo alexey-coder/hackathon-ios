@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/localization.dart';
-import 'package:maps/screens/map/pin_button.dart';
+import 'package:maps/screens/map/circle_button.dart';
 
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
