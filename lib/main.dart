@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/providers/text_field_provider.dart';
 import 'package:maps/screens/feed/feed_provider.dart';
 import 'package:maps/screens/splash_screen.dart';
 import 'package:maps/screens/tab_controller.dart';
@@ -13,7 +14,8 @@ void main() {
   setupServices();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => TabProvider()),
-    ChangeNotifierProvider(create: (_) => FeedProvider())
+    ChangeNotifierProvider(create: (_) => FeedProvider()),
+    ChangeNotifierProvider(create: (_) => SheetProvider())
   ], child: const App()));
 }
 
