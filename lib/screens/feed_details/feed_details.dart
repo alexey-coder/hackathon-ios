@@ -1,29 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:maps/screens/common_widgets/feed_image.dart';
 import 'package:provider/provider.dart';
+import '../common_widgets/back_button_with_title.dart';
 import 'feed_details_prvider.dart';
 
 class FeedDetailsScreen extends StatelessWidget {
-  const FeedDetailsScreen({super.key});
+  FeedDetailsScreen(
+      {Key? key,
+      required this.date,
+      required this.title,
+      required this.subTitle,
+      required this.url})
+      : super(key: key);
+
+  String date;
+  String title;
+  String subTitle;
+  String url;
 
   @override
   Widget build(BuildContext context) {
-    // var pro = context.watch<FeedDetailsProvider>();
+    // var pro = context.watch<FeedDetailsProvider>()
 
     return Scaffold(
-        appBar: AppBar(title: const Text('App bar')),
-        body: Padding(
-            padding: const EdgeInsets.all(15),
+        body: SafeArea(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                      child: FeedImage(
-                        imageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
-                        height: 300,
-                        text: "text",
-                        key: null,
-                      )
-                  )])));
+                  BackButtonWithTitle(
+              title: 'privet',
+              backTap: () {
+                Navigator.pop(context);
+              }
+              ),
+                  const Divider(color: Colors.black),
+                  Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        FeedImage(
+                          imageUrl: url,
+                          height: 300,
+                          text: title,
+                          key: null,
+                        ),
+                        const SizedBox(height: 10),
+                        Text(date,
+                            textAlign: TextAlign.left,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
+                        Text(title,
+                            textAlign: TextAlign.left,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontWeight: FontWeight.normal)),
+                        Text(subTitle,
+                            textAlign: TextAlign.left,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontWeight: FontWeight.w100)
+                        )
+                      ])
+                  )
+        ]
+    )
+    )
+    );
   }
 }

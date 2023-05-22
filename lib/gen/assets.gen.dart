@@ -16,6 +16,8 @@ class Assets {
       AssetGenImage('assets/art_schools.png');
   static const AssetGenImage bookmark = AssetGenImage('assets/bookmark.png');
   static const AssetGenImage chat = AssetGenImage('assets/chat.png');
+  static const AssetGenImage chevronLeft =
+      AssetGenImage('assets/chevron-left.png');
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
@@ -41,6 +43,7 @@ class Assets {
         artSchools,
         bookmark,
         chat,
+        chevronLeft,
         childrenArtSchools,
         courses,
         cross,
