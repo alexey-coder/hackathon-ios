@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:maps/screens/map/map_sheet_screen.dart';
 import 'package:maps/screens/map/pin_button.dart';
+import 'package:maps/screens/sheet/sheet_screen.dart';
 
 class MapScreen extends StatelessWidget {
   MapScreen({super.key});
@@ -50,7 +50,7 @@ class MapScreen extends StatelessWidget {
                   builder: (context) => PinButton(onPressed: () => {})),
             ])
           ]),
-      const MapSheetScreen()
+      const SheetScreen()
     ]);
   }
 }
