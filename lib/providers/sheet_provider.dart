@@ -13,4 +13,8 @@ class SheetProvider extends ChangeNotifier {
     seachText = newValue;
     notifyListeners();
   }
+
+  void resetText() {
+    changeSearchText('');
+  }
 }

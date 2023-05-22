@@ -33,7 +33,10 @@ class SheetScreen extends StatelessWidget {
                   keyboardDismissBehavior:
                       ScrollViewKeyboardDismissBehavior.onDrag,
                   controller: scrollController,
-                  child: Column(children: [const SheetHeader(), buildBody()])));
+                  child: Column(children: [
+                    const SheetHeader(),
+                    buildBody(sheedProvider)
+                  ])));
         });
   }
 
@@ -47,8 +50,13 @@ class SheetScreen extends StatelessWidget {
         duration: const Duration(milliseconds: 200), curve: Curves.linear);
   }
 
-  Widget buildBody() {
-    return const Padding(
-        padding: EdgeInsets.only(top: 16), child: PresetsContainer());
+  Widget buildBody(SheetProvider provider) {
+    return Column(children: [
+      const SizedBox(height: 16),
+      if (provider.seachText.isEmpty)
+        const PresetsContainer()
+      else
+        const Text('123')
+    ]);
   }
 }

@@ -19,7 +19,8 @@ class SheetHeader extends StatelessWidget {
               controller: TextEditingController(text: sheetProvider.seachText),
               focused: sheetProvider.searchFocused,
               onFocusChange: sheetProvider.changeSeachFocused,
-              onTextChange: sheetProvider.changeSearchText))
+              onTextChange: sheetProvider.changeSearchText,
+              onResetText: sheetProvider.resetText))
     ]);
   }
 }

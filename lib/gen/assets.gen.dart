@@ -19,6 +19,7 @@ class Assets {
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
+  static const AssetGenImage cross = AssetGenImage('assets/cross.png');
   static const AssetGenImage danceSchools =
       AssetGenImage('assets/dance_schools.png');
   static const AssetGenImage education = AssetGenImage('assets/education.png');
@@ -42,6 +43,7 @@ class Assets {
         chat,
         childrenArtSchools,
         courses,
+        cross,
         danceSchools,
         education,
         exhibitions,

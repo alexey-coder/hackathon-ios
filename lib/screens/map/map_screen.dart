@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/screens/map/pin_button.dart';
 import 'package:maps/screens/sheet/sheet_screen.dart';
 
@@ -27,27 +28,42 @@ class MapScreen extends StatelessWidget {
                   point: LatLng(59.942668, 30.315871),
                   width: 30,
                   height: 30,
-                  builder: (context) => PinButton(onPressed: () => {})),
+                  builder: (context) => CircleButton(
+                      image: Assets.pin.image(),
+                      size: const Size(30, 30),
+                      onPressed: () => {})),
               Marker(
                   point: LatLng(59.952670, 30.315879),
                   width: 30,
                   height: 30,
-                  builder: (context) => PinButton(onPressed: () => {})),
+                  builder: (context) => CircleButton(
+                      image: Assets.pin.image(),
+                      size: const Size(30, 30),
+                      onPressed: () => {})),
               Marker(
                   point: LatLng(59.742668, 30.415871),
                   width: 30,
                   height: 30,
-                  builder: (context) => PinButton(onPressed: () => {})),
+                  builder: (context) => CircleButton(
+                      image: Assets.pin.image(),
+                      size: const Size(30, 30),
+                      onPressed: () => {})),
               Marker(
                   point: LatLng(59.952670, 30.315879),
                   width: 30,
                   height: 30,
-                  builder: (context) => PinButton(onPressed: () => {})),
+                  builder: (context) => CircleButton(
+                      image: Assets.pin.image(),
+                      size: const Size(30, 30),
+                      onPressed: () => {})),
               Marker(
                   point: LatLng(59.432668, 30.418871),
                   width: 40,
                   height: 40,
-                  builder: (context) => PinButton(onPressed: () => {})),
+                  builder: (context) => CircleButton(
+                      image: Assets.pin.image(),
+                      size: const Size(30, 30),
+                      onPressed: () => {}))
             ])
           ]),
       SheetScreen()

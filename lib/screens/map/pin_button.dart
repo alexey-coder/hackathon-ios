@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:maps/gen/assets.gen.dart';
 
-class PinButton extends StatelessWidget {
+class CircleButton extends StatelessWidget {
   final VoidCallback onPressed;
+  final Size size;
+  final Image image;
 
-  const PinButton({Key? key, required this.onPressed}) : super(key: key);
+  const CircleButton(
+      {Key? key,
+      required this.image,
+      required this.size,
+      required this.onPressed})
+      : super(key: key);
 
   @override
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 30,
-        height: 30,
+        width: size.width,
+        height: size.height,
         child: ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
@@ -23,7 +29,7 @@ class PinButton extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: Assets.pin.image().image,
+                      image: image.image,
                       fit: BoxFit.cover,
                     )))));
   }

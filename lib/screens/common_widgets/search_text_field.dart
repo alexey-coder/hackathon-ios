@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/localization.dart';
+import 'package:maps/screens/map/pin_button.dart';
 
 class SearchTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool focused;
   final Function(bool newValue) onFocusChange;
   final Function(String newValue) onTextChange;
+  final VoidCallback onResetText;
 
   const SearchTextField(
       {Key? key,
       required this.controller,
       required this.focused,
       required this.onFocusChange,
-      required this.onTextChange})
+      required this.onTextChange,
+      required this.onResetText})
       : super(key: key);
 
   @override
@@ -42,7 +45,16 @@ class SearchTextField extends StatelessWidget {
                             Localization.shared.locale.search_by_organizations,
                         border: InputBorder.none,
                         isDense: true,
-                      ))))
+                      )))),
+          if (focused)
+            Row(children: [
+              const SizedBox(width: 11),
+              CircleButton(
+                  image: Assets.cross.image(),
+                  size: const Size(16, 16),
+                  onPressed: onResetText),
+              const SizedBox(width: 14)
+            ])
         ]));
   }
 }
