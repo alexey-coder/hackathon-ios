@@ -12,6 +12,7 @@ class AppTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = context.watch<TabProvider>();
     return BottomNavigationBar(
+        showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Assets.main
