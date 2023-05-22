@@ -13,7 +13,7 @@ class SheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var sheedProvider = context.watch<SheetProvider>();
     if (controller.isAttached) {
-      sheedProvider.searchFocused ? openSheet() : hideSheet();
+      sheedProvider.searchFocused ? openSheet() : hideSheet(sheedProvider);
     }
     return DraggableScrollableSheet(
         controller: controller,
@@ -45,15 +45,17 @@ class SheetScreen extends StatelessWidget {
         duration: const Duration(milliseconds: 200), curve: Curves.linear);
   }
 
-  void hideSheet() {
-    controller.animateTo(0.1,
-        duration: const Duration(milliseconds: 200), curve: Curves.linear);
+  void hideSheet(SheetProvider provider) {
+    if (provider.searchText.isEmpty) {
+      controller.animateTo(0.1,
+          duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    }
   }
 
   Widget buildBody(SheetProvider provider) {
     return Column(children: [
       const SizedBox(height: 16),
-      if (provider.seachText.isEmpty)
+      if (provider.searchText.isEmpty)
         const PresetsContainer()
       else
         const Text('123')

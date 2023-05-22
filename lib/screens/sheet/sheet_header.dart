@@ -16,7 +16,7 @@ class SheetHeader extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
           child: SearchTextField(
-              controller: TextEditingController(text: sheetProvider.seachText),
+              controller: TextEditingController(text: sheetProvider.searchText),
               focused: sheetProvider.searchFocused,
               onFocusChange: sheetProvider.changeSeachFocused,
               onTextChange: sheetProvider.changeSearchText,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SheetProvider extends ChangeNotifier {
   bool searchFocused = false;
-  String seachText = '';
+  String searchText = '';
 
   void changeSeachFocused(bool newValue) {
     searchFocused = newValue;
@@ -10,7 +10,7 @@ class SheetProvider extends ChangeNotifier {
   }
 
   void changeSearchText(String newValue) {
-    seachText = newValue;
+    searchText = newValue;
     notifyListeners();
   }
 
