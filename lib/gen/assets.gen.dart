@@ -14,6 +14,8 @@ class Assets {
 
   static const AssetGenImage artSchools =
       AssetGenImage('assets/art_schools.png');
+  static const AssetGenImage bookmark = AssetGenImage('assets/bookmark.png');
+  static const AssetGenImage chat = AssetGenImage('assets/chat.png');
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
@@ -22,6 +24,7 @@ class Assets {
   static const AssetGenImage education = AssetGenImage('assets/education.png');
   static const AssetGenImage exhibitions =
       AssetGenImage('assets/exhibitions.png');
+  static const AssetGenImage heart = AssetGenImage('assets/heart.png');
   static const AssetGenImage main = AssetGenImage('assets/main.png');
   static const AssetGenImage map = AssetGenImage('assets/map.png');
   static const AssetGenImage museums = AssetGenImage('assets/museums.png');
@@ -35,11 +38,14 @@ class Assets {
   /// List of all assets
   List<AssetGenImage> get values => [
         artSchools,
+        bookmark,
+        chat,
         childrenArtSchools,
         courses,
         danceSchools,
         education,
         exhibitions,
+        heart,
         main,
         map,
         museums,
