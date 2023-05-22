@@ -50,7 +50,7 @@ class MapScreen extends StatelessWidget {
                   builder: (context) => PinButton(onPressed: () => {})),
             ])
           ]),
-      const SheetScreen()
+      SheetScreen()
     ]);
   }
 }

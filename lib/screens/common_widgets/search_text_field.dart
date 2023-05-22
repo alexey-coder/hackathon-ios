@@ -20,7 +20,7 @@ class SearchTextField extends StatelessWidget {
         height: 40,
         decoration: BoxDecoration(
             color: const Color(0xFFF9F9F9),
-            border: focused ? Border.all() : null,
+            border: focused ? Border.all(color: const Color(0xFFAFCC46)) : null,
             borderRadius: BorderRadius.circular(8)),
         child: Row(children: [
           const SizedBox(width: 11),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/providers/text_field_provider.dart';
-import 'package:maps/screens/map/search_text_field.dart';
+import 'package:maps/screens/common_widgets/search_text_field.dart';
 import 'package:maps/screens/sheet/shevron.dart';
 import 'package:provider/provider.dart';
 
