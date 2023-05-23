@@ -13,12 +13,12 @@ class AdditionalDetailsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       const SizedBox(height: 32),
-      Padding(
-          padding: const EdgeInsets.all(16),
-          child: MainTitle(title: 'privet')),
-      Expanded(
-          child: ListView.separated(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+      MainTitle(title: 'privet'),
+          const SizedBox(height: 8),
+          ListView.separated(
+              primary: false,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (_, index) {
                 return AdditionalDetailsCard(
                   additionalDetailsModel: additionalDetails[index],
@@ -29,7 +29,6 @@ class AdditionalDetailsList extends StatelessWidget {
                   ),
               itemCount: additionalDetails.length
           )
-      )
     ]);
   }
 }

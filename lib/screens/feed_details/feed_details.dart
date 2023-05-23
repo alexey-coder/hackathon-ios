@@ -24,24 +24,26 @@ class FeedDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = context.watch<FeedDetailsProvider>();
 
-    return Scaffold(
-        body: SafeArea(
-            child: Column(
+    return SafeArea(
+        child: Scaffold(
+            appBar: BackButtonWithTitle(
+                title: 'privet',
+                backTap: () {
+                  Navigator.pop(context);
+                }
+            ),
+            body: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  BackButtonWithTitle(
-                      title: 'privet',
-                      backTap: () {
-                        Navigator.pop(context);
-                      }
-                      ),
-                  const Divider(color: Colors.black),
                         FeedImage(
                           imageUrl: url,
                           height: 300,
                           text: title,
                           key: null,
                         ),
+
                         const SizedBox(height: 10),
                         Text(date,
                             textAlign: TextAlign.left,
@@ -56,10 +58,10 @@ class FeedDetailsScreen extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(fontWeight: FontWeight.w100)
                         ),
-                        Expanded(child: AdditionalDetailsList(additionalDetails: provider.detailsList)
-                        )
+                  AdditionalDetailsList(additionalDetails: provider.detailsList)
                       ],
                     )
+            )
     )
     );
   }
