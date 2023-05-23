@@ -1,26 +1,51 @@
 import 'package:flutter/material.dart';
 
+enum ButtonColors {
+  mainColor, secondary, pale, alert
+}
+extension on ButtonColors {
+  Color get getColor {
+    switch (this) {
+      case ButtonColors.mainColor:
+        return const Color.fromRGBO(175, 204, 70, 1);
+      case ButtonColors.secondary:
+        return const Color.fromRGBO(13, 16, 25, 0.06);
+      case ButtonColors.pale:
+        return const Color.fromRGBO(13, 16, 25, 0.03);
+      case ButtonColors.alert:
+        return const Color.fromRGBO(204, 70, 70, 1);
+    }
+  }
+}
 
 class MainButton extends StatelessWidget  {
   const MainButton({
     Key? key,
-    this.text,
+    required this.buttonColor,
+    required this.borderColor,
+    required this.text,
+    this.width,
     this.press,
   }) : super(key: key);
 
-  final String? text;
+  final String text;
   final Function? press;
+  final ButtonColors buttonColor;
+  final Color borderColor;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: width ?? double.infinity ,
       height: 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(175, 204, 70, 1),
+          foregroundColor: Colors.red,
+          backgroundColor: buttonColor.getColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
+              side: BorderSide(color: borderColor)
             )
         ),
         onPressed: press as void Function()?,
