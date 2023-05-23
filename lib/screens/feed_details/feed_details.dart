@@ -30,17 +30,12 @@ class FeedDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   BackButtonWithTitle(
-              title: 'privet',
-              backTap: () {
-                Navigator.pop(context);
-              }
-              ),
+                      title: 'privet',
+                      backTap: () {
+                        Navigator.pop(context);
+                      }
+                      ),
                   const Divider(color: Colors.black),
-                  Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
                         FeedImage(
                           imageUrl: url,
                           height: 300,
@@ -61,13 +56,10 @@ class FeedDetailsScreen extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(fontWeight: FontWeight.w100)
                         ),
-                      ])
-                  ),
-                  Expanded(
-                      child: AdditionalDetailsList(additionalDetails: provider.detailsList)
-                  )
-        ]
-    )
+                        Expanded(child: AdditionalDetailsList(additionalDetails: provider.detailsList)
+                        )
+                      ],
+                    )
     )
     );
   }

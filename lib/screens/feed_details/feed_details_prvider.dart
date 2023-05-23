@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../common_widgets/additional_details/additional_details_model.dart';
 
 final List<AdditionalDetailsModel> randomDetailsList = List.generate(
-    6,
+      6,
         (index) => AdditionalDetailsModel(
         topTitle: "111",
         middleTitle: "222",

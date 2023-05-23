@@ -32,6 +32,7 @@ class AdditionalDetailsCard extends StatelessWidget {
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 8),
           Text(
               additionalDetailsModel.middleTitle,
               textAlign: TextAlign.left,
