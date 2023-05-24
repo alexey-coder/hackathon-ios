@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maps/providers/sheet_provider.dart';
 import 'package:maps/screens/sheet/presets_container.dart';
 import 'package:maps/screens/sheet/search_row.dart';
+import 'package:maps/screens/sheet/search_row_info.dart';
 import 'package:maps/screens/sheet/sheet_header.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,7 @@ class SheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var sheedProvider = context.watch<SheetProvider>();
     if (controller.isAttached) {
-      sheedProvider.searchFocused
+      sheedProvider.searchFocused || sheedProvider.searchText.isNotEmpty
           ? openSheet(sheedProvider)
           : hideSheet(sheedProvider);
     }
@@ -56,14 +57,87 @@ class SheetScreen extends StatelessWidget {
   }
 
   Widget buildBody(SheetProvider provider, ScrollController scrollController) {
-    return Padding(
-        padding: const EdgeInsets.only(left: 24, right: 24),
-        child: Column(children: [
+    return Column(children: [
+      if (provider.searchText.isEmpty)
+        const Column(children: [
+          SizedBox(height: 16),
+          Padding(
+              padding: EdgeInsets.only(left: 24, right: 24),
+              child: PresetsContainer())
+        ])
+      else if (provider.searchFocused)
+        Column(children: [
           const SizedBox(height: 16),
-          if (provider.searchText.isEmpty)
-            const PresetsContainer()
-          else
-            const Column(children: [SearchRow(), SearchRow(), SearchRow()])
-        ]));
+          Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24),
+              child: Column(children: [
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'Арт Галерея Москва')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'Государственная Третьяковская галерея, галерея Новая Третьяковка')),
+                SearchRow(
+                    viewModel:
+                        SearchRowViewModel(text: 'Центр искусств Москва')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'Московская государственная картинная галерея народного художника СССР Александра Шилова')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text: 'Первая Московская галерея восточной живописи')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'Галерея Fineart')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'HSE Art Gallery')),
+                SearchRow(
+                    viewModel:
+                        SearchRowViewModel(text: 'Галерея Здесь на Таганке')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text: 'Галерея искусств Зураба Церетели'))
+              ]))
+        ])
+      else
+        Column(children: [
+          SearchRowInfo(
+              viewModel: SearchRowInfoViewModel(
+                  title: 'Арт галерея Москва',
+                  subtitle: 'Музей современного искусства',
+                  address: 'Садовая-Кудринская ул., 25, Москва',
+                  distance: '7 км')),
+          SearchRowInfo(
+              viewModel: SearchRowInfoViewModel(
+                  title:
+                      'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков',
+                  subtitle: 'Музей современного искусства',
+                  address: 'Садовая-Кудринская ул., 25, Москва',
+                  distance: '7 км')),
+          SearchRowInfo(
+              viewModel: SearchRowInfoViewModel(
+                  title: 'галерея Новая Третьяковка',
+                  subtitle: 'Государственная Третьяковская галерея',
+                  address: 'Садовая-Кудринская ул., 25, Москва',
+                  distance: '7 км')),
+          SearchRowInfo(
+              viewModel: SearchRowInfoViewModel(
+                  title: 'Центр искусств Москва',
+                  subtitle: 'Музей современного искусства',
+                  address: 'Садовая-Кудринская ул., 25, Москва',
+                  distance: '7 км')),
+          SearchRowInfo(
+              viewModel: SearchRowInfoViewModel(
+                  title:
+                      'Московская государственная картинная галерея народного художника СССР Александра Шилова',
+                  subtitle: 'Музей современного искусства',
+                  address: 'Садовая-Кудринская ул., 25, Москва',
+                  distance: '7 км'))
+        ])
+    ]);
   }
 }

@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/gen/fonts.gen.dart';
 
+class SearchRowViewModel {
+  final String text;
+
+  SearchRowViewModel({required this.text});
+}
+
 class SearchRow extends StatelessWidget {
-  const SearchRow({Key? key}) : super(key: key);
+  const SearchRow({Key? key, required this.viewModel}) : super(key: key);
+
+  final SearchRowViewModel viewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +20,11 @@ class SearchRow extends StatelessWidget {
       Assets.search
           .image(width: 24, height: 24, color: const Color(0xFF7C7C7B)),
       const SizedBox(width: 11),
-      const Flexible(
+      Flexible(
           child: Padding(
-              padding: EdgeInsets.only(top: 10, bottom: 10),
-              child: Text(
-                  'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков',
-                  style: TextStyle(
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              child: Text(viewModel.text,
+                  style: const TextStyle(
                       fontFamily: FontFamily.deeDee,
                       fontSize: 14,
                       color: Color(0xFF121212)))))

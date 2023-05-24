@@ -30,6 +30,9 @@ class Assets {
   static const AssetGenImage heart = AssetGenImage('assets/heart.png');
   static const AssetGenImage main = AssetGenImage('assets/main.png');
   static const AssetGenImage map = AssetGenImage('assets/map.png');
+  static const AssetGenImage mapCross = AssetGenImage('assets/map_cross.png');
+  static const AssetGenImage mapSettings =
+      AssetGenImage('assets/map_settings.png');
   static const AssetGenImage museums = AssetGenImage('assets/museums.png');
   static const AssetGenImage musicalSchools =
       AssetGenImage('assets/musical_schools.png');
@@ -53,6 +56,8 @@ class Assets {
         heart,
         main,
         map,
+        mapCross,
+        mapSettings,
         museums,
         musicalSchools,
         pin,
