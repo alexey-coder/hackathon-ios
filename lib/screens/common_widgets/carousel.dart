@@ -20,7 +20,7 @@ class Carousel extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         SizedBox(
-          height: 200.0,
+          height: height,
           child: PageView.builder(
             itemCount: urls.length,
             controller: PageController(viewportFraction: 0.8),
