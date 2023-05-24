@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maps/providers/sheet_provider.dart';
 import 'package:maps/screens/sheet/presets_container.dart';
 import 'package:maps/screens/sheet/search_row.dart';
+import 'package:maps/screens/sheet/search_row_info.dart';
 import 'package:maps/screens/sheet/sheet_header.dart';
 import 'package:provider/provider.dart';
 
@@ -62,7 +63,7 @@ class SheetScreen extends StatelessWidget {
           const SizedBox(height: 16),
           if (provider.searchText.isEmpty)
             const PresetsContainer()
-          else
+          else if (provider.searchFocused)
             Column(children: [
               SearchRow(
                   viewModel: SearchRowViewModel(text: 'Арт Галерея Москва')),
@@ -91,6 +92,41 @@ class SheetScreen extends StatelessWidget {
               SearchRow(
                   viewModel: SearchRowViewModel(
                       text: 'Галерея искусств Зураба Церетели'))
+            ])
+          else
+            Column(children: [
+              SearchRowInfo(
+                  viewModel: SearchRowInfoViewModel(
+                      title: 'Арт галерея Москва',
+                      subtitle: 'Музей современного искусства',
+                      address: 'Садовая-Кудринская ул., 25, Москва',
+                      distance: '7 км')),
+              SearchRowInfo(
+                  viewModel: SearchRowInfoViewModel(
+                      title:
+                          'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков',
+                      subtitle: 'Музей современного искусства',
+                      address: 'Садовая-Кудринская ул., 25, Москва',
+                      distance: '7 км')),
+              SearchRowInfo(
+                  viewModel: SearchRowInfoViewModel(
+                      title: 'галерея Новая Третьяковка',
+                      subtitle: 'Государственная Третьяковская галерея',
+                      address: 'Садовая-Кудринская ул., 25, Москва',
+                      distance: '7 км')),
+              SearchRowInfo(
+                  viewModel: SearchRowInfoViewModel(
+                      title: 'Центр искусств Москва',
+                      subtitle: 'Музей современного искусства',
+                      address: 'Садовая-Кудринская ул., 25, Москва',
+                      distance: '7 км')),
+              SearchRowInfo(
+                  viewModel: SearchRowInfoViewModel(
+                      title:
+                          'Московская государственная картинная галерея народного художника СССР Александра Шилова',
+                      subtitle: 'Музей современного искусства',
+                      address: 'Садовая-Кудринская ул., 25, Москва',
+                      distance: '7 км'))
             ])
         ]));
   }
