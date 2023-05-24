@@ -28,6 +28,9 @@ class Assets {
   static const AssetGenImage exhibitions =
       AssetGenImage('assets/exhibitions.png');
   static const AssetGenImage heart = AssetGenImage('assets/heart.png');
+  static const AssetGenImage interesting =
+      AssetGenImage('assets/interesting.png');
+  static const AssetGenImage interview = AssetGenImage('assets/interview.png');
   static const AssetGenImage main = AssetGenImage('assets/main.png');
   static const AssetGenImage map = AssetGenImage('assets/map.png');
   static const AssetGenImage mapCross = AssetGenImage('assets/map_cross.png');
@@ -36,10 +39,17 @@ class Assets {
   static const AssetGenImage museums = AssetGenImage('assets/museums.png');
   static const AssetGenImage musicalSchools =
       AssetGenImage('assets/musical_schools.png');
+  static const AssetGenImage news = AssetGenImage('assets/news.png');
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
+  static const AssetGenImage playlist = AssetGenImage('assets/playlist.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
+  static const AssetGenImage questions = AssetGenImage('assets/questions.png');
+  static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
+  static const AssetGenImage talant = AssetGenImage('assets/talant.png');
   static const AssetGenImage theaters = AssetGenImage('assets/theaters.png');
+  static const AssetGenImage wordOfADay =
+      AssetGenImage('assets/word_of_a_day.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -54,16 +64,24 @@ class Assets {
         education,
         exhibitions,
         heart,
+        interesting,
+        interview,
         main,
         map,
         mapCross,
         mapSettings,
         museums,
         musicalSchools,
+        news,
         pin,
+        playlist,
         profile,
+        questions,
+        quiz,
         search,
-        theaters
+        talant,
+        theaters,
+        wordOfADay
       ];
 }
 
