@@ -13,7 +13,7 @@ class FeedTab extends StatelessWidget {
     var feedProvider = context.read<FeedProvider>();
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.only(left: 24, right: 24, top: 16),
           child: SearchTextField(
               controller: TextEditingController(text: feedProvider.searchText),
               focused: feedProvider.searchFocused,
