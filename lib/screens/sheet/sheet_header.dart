@@ -14,10 +14,10 @@ class SheetHeader extends StatelessWidget {
     return Column(children: [
       const SizedBox(height: 12),
       const Shevron(),
-      Padding(
-          padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
-          child: Column(children: [
-            Row(children: [
+      Column(children: [
+        Padding(
+            padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
+            child: Row(children: [
               Expanded(
                   child: SearchTextField(
                       controller:
@@ -31,23 +31,22 @@ class SheetHeader extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.only(left: 8),
                     child: ResetButton(onPressed: sheetProvider.resetText))
-            ]),
-            if (sheetProvider.searchText.isNotEmpty &&
-                !sheetProvider.searchFocused)
-              Padding(
-                  padding: const EdgeInsets.only(top: 12),
-                  child: Column(children: [
-                    Row(children: [
-                      Wrap(spacing: 8, children: [
-                        MapSettingsButton(onPressed: () => {}),
-                        MapPresetButton(onPressed: () => {}, title: 'Рядом'),
-                        MapPresetButton(onPressed: () => {}, title: 'Открыто')
-                      ])
-                    ]),
-                    const SizedBox(height: 7),
-                    Container(color: const Color(0xFFEDEDED), height: 1)
-                  ]))
-          ]))
+            ])),
+        if (sheetProvider.searchText.isNotEmpty && !sheetProvider.searchFocused)
+          Column(children: [
+            Padding(
+                padding: const EdgeInsets.only(top: 12, left: 24),
+                child: Row(children: [
+                  Wrap(spacing: 8, children: [
+                    MapSettingsButton(onPressed: () => {}),
+                    MapPresetButton(onPressed: () => {}, title: 'Рядом'),
+                    MapPresetButton(onPressed: () => {}, title: 'Открыто')
+                  ])
+                ])),
+            const SizedBox(height: 7),
+            Container(color: const Color(0xFFEDEDED), height: 1)
+          ])
+      ])
     ]);
   }
 }
