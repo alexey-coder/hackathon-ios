@@ -67,31 +67,41 @@ class SheetScreen extends StatelessWidget {
         ])
       else if (provider.searchFocused)
         Column(children: [
-          SearchRow(viewModel: SearchRowViewModel(text: 'Арт Галерея Москва')),
-          SearchRow(
-              viewModel: SearchRowViewModel(
-                  text:
-                      'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков')),
-          SearchRow(
-              viewModel: SearchRowViewModel(
-                  text:
-                      'Государственная Третьяковская галерея, галерея Новая Третьяковка')),
-          SearchRow(
-              viewModel: SearchRowViewModel(text: 'Центр искусств Москва')),
-          SearchRow(
-              viewModel: SearchRowViewModel(
-                  text:
-                      'Московская государственная картинная галерея народного художника СССР Александра Шилова')),
-          SearchRow(
-              viewModel: SearchRowViewModel(
-                  text: 'Первая Московская галерея восточной живописи')),
-          SearchRow(viewModel: SearchRowViewModel(text: 'Галерея Fineart')),
-          SearchRow(viewModel: SearchRowViewModel(text: 'HSE Art Gallery')),
-          SearchRow(
-              viewModel: SearchRowViewModel(text: 'Галерея Здесь на Таганке')),
-          SearchRow(
-              viewModel:
-                  SearchRowViewModel(text: 'Галерея искусств Зураба Церетели'))
+          const SizedBox(height: 16),
+          Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24),
+              child: Column(children: [
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'Арт Галерея Москва')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'ГМИИ имени Пушкина, Галерея искусства стран Европы и Америки XIX – XX веков')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'Государственная Третьяковская галерея, галерея Новая Третьяковка')),
+                SearchRow(
+                    viewModel:
+                        SearchRowViewModel(text: 'Центр искусств Москва')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text:
+                            'Московская государственная картинная галерея народного художника СССР Александра Шилова')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text: 'Первая Московская галерея восточной живописи')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'Галерея Fineart')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(text: 'HSE Art Gallery')),
+                SearchRow(
+                    viewModel:
+                        SearchRowViewModel(text: 'Галерея Здесь на Таганке')),
+                SearchRow(
+                    viewModel: SearchRowViewModel(
+                        text: 'Галерея искусств Зураба Церетели'))
+              ]))
         ])
       else
         Column(children: [
