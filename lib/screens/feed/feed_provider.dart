@@ -1,12 +1,8 @@
-import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'feed_dto.dart';
 
-final List<FeedDTO> initialData = List.generate(
-    20,
-    (index) => FeedDTO(
-        title: "Moview $index"
-    ));
+final List<FeedDTO> initialData =
+    List.generate(20, (index) => FeedDTO(title: "Moview $index"));
 
 class FeedProvider with ChangeNotifier {
   final List<FeedDTO> _feeds = initialData;
