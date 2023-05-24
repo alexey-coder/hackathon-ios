@@ -22,21 +22,30 @@ class FeedTab extends StatelessWidget {
               onResetText: feedProvider.resetText)),
       Expanded(
           child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               itemCount: feedProvider.feeds.length,
               itemBuilder: (_, index) {
                 return FeedCard(
-                    width: MediaQuery.of(context).size.width,
-                    onTap: () {
-                      var details = FeedDetailsScreen(
-                          title: "333",
-                          subTitle: "2222",
-                          url:
-                              "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
-                          date: '22.33..22');
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => details));
-                    });
+                    viewModel: FeedCardViewModel(
+                        date: '03.04.2021 15:37',
+                        title: 'Екатерина Ганелина',
+                        subtitle:
+                            'Известный российский концертмейстер, постоянный концертмейстер народной артистки России Хиблы Герзмава.',
+                        imageUrl:
+                            'https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg',
+                        imageLabel: 'Интервью',
+                        commentsCount: '12',
+                        likesCount: '5',
+                        onTap: () {
+                          var details = FeedDetailsScreen(
+                              title: "333",
+                              subTitle: "2222",
+                              url:
+                                  "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                              date: '22.33..22');
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => details));
+                        }));
               }))
     ]);
   }

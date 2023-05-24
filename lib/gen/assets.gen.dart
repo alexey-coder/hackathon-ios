@@ -20,6 +20,7 @@ class Assets {
       AssetGenImage('assets/chevron-left.png');
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
+  static const AssetGenImage comment = AssetGenImage('assets/comment.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
   static const AssetGenImage cross = AssetGenImage('assets/cross.png');
   static const AssetGenImage danceSchools =
@@ -48,6 +49,7 @@ class Assets {
         chat,
         chevronLeft,
         childrenArtSchools,
+        comment,
         courses,
         cross,
         danceSchools,
