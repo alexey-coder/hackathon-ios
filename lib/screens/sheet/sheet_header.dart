@@ -16,20 +16,37 @@ class SheetHeader extends StatelessWidget {
       const Shevron(),
       Padding(
           padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
-          child: Row(children: [
-            Expanded(
-                child: SearchTextField(
-                    controller:
-                        TextEditingController(text: sheetProvider.searchText),
-                    focused: sheetProvider.searchFocused,
-                    onFocusChange: sheetProvider.changeSeachFocused,
-                    onTextChange: sheetProvider.changeSearchText,
-                    onResetText: sheetProvider.resetText)),
-            if (!sheetProvider.searchFocused &&
-                sheetProvider.searchText.isNotEmpty)
+          child: Column(children: [
+            Row(children: [
+              Expanded(
+                  child: SearchTextField(
+                      controller:
+                          TextEditingController(text: sheetProvider.searchText),
+                      focused: sheetProvider.searchFocused,
+                      onFocusChange: sheetProvider.changeSeachFocused,
+                      onTextChange: sheetProvider.changeSearchText,
+                      onResetText: sheetProvider.resetText)),
+              if (!sheetProvider.searchFocused &&
+                  sheetProvider.searchText.isNotEmpty)
+                Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: ResetButton(onPressed: sheetProvider.resetText))
+            ]),
+            if (sheetProvider.searchText.isNotEmpty &&
+                !sheetProvider.searchFocused)
               Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: ResetButton(onPressed: sheetProvider.resetText))
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Column(children: [
+                    Row(children: [
+                      Wrap(spacing: 8, children: [
+                        MapSettingsButton(onPressed: () => {}),
+                        MapPresetButton(onPressed: () => {}, title: 'Рядом'),
+                        MapPresetButton(onPressed: () => {}, title: 'Открыто')
+                      ])
+                    ]),
+                    const SizedBox(height: 7),
+                    Container(color: const Color(0xFFEDEDED), height: 1)
+                  ]))
           ]))
     ]);
   }
