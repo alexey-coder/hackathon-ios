@@ -15,7 +15,7 @@ class SheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var sheedProvider = context.watch<SheetProvider>();
     if (controller.isAttached) {
-      sheedProvider.searchFocused
+      sheedProvider.searchFocused || sheedProvider.searchText.isNotEmpty
           ? openSheet(sheedProvider)
           : hideSheet(sheedProvider);
     }
