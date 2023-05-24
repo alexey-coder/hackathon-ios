@@ -19,10 +19,10 @@ extension on ButtonColors {
 }
 
 class MainButton extends StatelessWidget  {
-  const MainButton({
+   MainButton({
     Key? key,
     required this.buttonColor,
-    required this.borderColor,
+    this.borderColor,
     required this.text,
     this.width,
     this.press,
@@ -31,7 +31,7 @@ class MainButton extends StatelessWidget  {
   final String text;
   final Function? press;
   final ButtonColors buttonColor;
-  final Color borderColor;
+  Color? borderColor;
   final double? width;
 
   @override
@@ -43,10 +43,7 @@ class MainButton extends StatelessWidget  {
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.red,
           backgroundColor: buttonColor.getColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: BorderSide(color: borderColor)
-            )
+            shape: borderColor != null ? _getBorder(borderColor!) : null
         ),
         onPressed: press as void Function()?,
         child: Text(
@@ -57,6 +54,13 @@ class MainButton extends StatelessWidget  {
           ),
         ),
       ),
+    );
+  }
+
+  RoundedRectangleBorder _getBorder(Color color) {
+    return RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: BorderSide(color: color)
     );
   }
 }

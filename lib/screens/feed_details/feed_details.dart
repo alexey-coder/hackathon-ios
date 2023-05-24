@@ -30,39 +30,36 @@ class FeedDetailsScreen extends StatelessWidget {
                 title: 'privet',
                 backTap: () {
                   Navigator.pop(context);
-                }
-            ),
+                }),
             body: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                        FeedImage(
-                          imageUrl: url,
-                          height: 300,
-                          text: title,
-                          key: null,
-                        ),
-
-                        const SizedBox(height: 10),
-                        Text(date,
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontWeight: FontWeight.bold)),
-                        Text(title,
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontWeight: FontWeight.normal)),
-                        Text(subTitle,
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontWeight: FontWeight.w100)
-                        ),
-                  AdditionalDetailsList(additionalDetails: provider.detailsList)
-                      ],
-                    )
-            )
-    )
-    );
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    FeedImage(
+                      imageUrl: url,
+                      height: 300,
+                      text: title,
+                      key: null,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(date,
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                    Text(title,
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontWeight: FontWeight.normal)),
+                    Text(subTitle,
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontWeight: FontWeight.w100)),
+                    AdditionalDetailsList(
+                      title: "Смотрите также",
+                        additionalDetails: provider.detailsList),
+                    const SizedBox(height: 16),
+                  ],
+                ))));
   }
 }
