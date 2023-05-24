@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/common_widgets/additional_details/additional_details_list.dart';
+import 'package:maps/screens/common_widgets/back_button_with_title.dart';
 import 'package:maps/screens/common_widgets/feed_image.dart';
 import 'package:provider/provider.dart';
-import '../common_widgets/additional_details/additional_details_list.dart';
-import '../common_widgets/additional_details/additional_details_model.dart';
-import '../common_widgets/back_button_with_title.dart';
 import 'feed_details_prvider.dart';
 
 class FeedDetailsScreen extends StatelessWidget {
@@ -56,7 +55,7 @@ class FeedDetailsScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(fontWeight: FontWeight.w100)),
                     AdditionalDetailsList(
-                      title: "Смотрите также",
+                        title: "Смотрите также",
                         additionalDetails: provider.detailsList),
                     const SizedBox(height: 16),
                   ],

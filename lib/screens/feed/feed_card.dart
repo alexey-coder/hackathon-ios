@@ -3,25 +3,70 @@ import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/gen/fonts.gen.dart';
 import 'package:maps/screens/common_widgets/feed_image.dart';
 
+class AdditionalReading {
+  final String imageUrl;
+  final String autorName;
+  final String description;
+
+  AdditionalReading(
+      {required this.imageUrl,
+      required this.autorName,
+      required this.description});
+}
+
+class Reply {
+  final String authorImageUrl;
+  final String date;
+  final String name;
+  final String comment;
+
+  Reply(
+      {required this.authorImageUrl,
+      required this.date,
+      required this.name,
+      required this.comment});
+}
+
+class Comment {
+  final String authorImageUrl;
+  final String date;
+  final String name;
+  final String comment;
+  final String likesCount;
+  final List<Reply> replies;
+
+  Comment(
+      {required this.authorImageUrl,
+      required this.date,
+      required this.name,
+      required this.comment,
+      required this.likesCount,
+      required this.replies});
+}
+
 class FeedCardViewModel {
   final String date;
   final String title;
+  final String description;
   final String subtitle;
   final String imageUrl;
   final String imageLabel;
-  final String commentsCount;
   final String likesCount;
+  final List<Comment> comments;
+  final List<AdditionalReading> additionalReading;
 
   final VoidCallback onTap;
 
   FeedCardViewModel(
       {required this.date,
       required this.title,
+      required this.description,
       required this.subtitle,
       required this.imageUrl,
       required this.imageLabel,
-      required this.commentsCount,
       required this.likesCount,
+      required this.comments,
+      required this.additionalReading,
       required this.onTap});
 }
 
