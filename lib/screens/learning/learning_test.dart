@@ -5,8 +5,21 @@ import 'package:provider/provider.dart';
 import '../../gen/assets.gen.dart';
 import '../../gen/fonts.gen.dart';
 
-class LearningTest extends StatelessWidget {
+class LearningTest extends StatefulWidget {
   const LearningTest({Key? key}) : super(key: key);
+
+  @override
+  State<LearningTest> createState() => _LearningTestState();
+}
+
+class _LearningTestState extends State<LearningTest> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<LearningProvider>(context, listen: true).getData();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +48,21 @@ class LearningTest extends StatelessWidget {
                               fontWeight: FontWeight.w700)),
                       const Spacer(),
                       Consumer<LearningProvider>(
-                          builder: (context, question, widget) {
-                        if (question.answers.isEmpty) {
+                          builder: (context, provider, widget) {
+                        if (provider == null || provider.questions.isEmpty) {
                           return const CircularProgressIndicator();
                         } else {
                           return Wrap(
                               runSpacing: 8,
                               alignment: WrapAlignment.center,
                               crossAxisAlignment: WrapCrossAlignment.center,
-                              children: List.generate(question.answers.length,
+                              children: List.generate(provider.questions[0].answers.length,
                                   (index) {
                                 return MainButton(
                                   buttonColor: ButtonColors.secondary,
-                                  text: question.answers[index].value,
+                                  text: provider.questions[0].answers[index].value,
                                   press: () {
-                                    provider.select(question.answers[index].id);
+                                    provider.select(provider.questions[0].answers[index].id);
                                   },
                                 );
                               }));

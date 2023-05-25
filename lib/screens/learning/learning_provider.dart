@@ -33,10 +33,13 @@ class LearningProvider extends ChangeNotifier {
 
   int currentQuestionIndex = 0;
 
-  late Future<List<QuestionDTO>> futureData = Future.value(
-      qestionsjson.map((i) => QuestionDTO.fromJson(i)).toList()
-  );
-  // late var currentQuestion = futureData[currentQuestionIndex];
+  List<QuestionDTO> questions = [];
+
+  Future<void> getData() async {
+    questions = qestionsjson.map((i) => QuestionDTO.fromJson(i)).toList();
+    print(questions);
+    notifyListeners();
+  }
 
   void select(int answer) {
     selectedAnswer = answer;
