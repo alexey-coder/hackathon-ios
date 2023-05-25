@@ -14,10 +14,9 @@ class Assets {
 
   static const AssetGenImage artSchools =
       AssetGenImage('assets/art_schools.png');
+  static const AssetGenImage backButton =
+      AssetGenImage('assets/back_button.png');
   static const AssetGenImage bookmark = AssetGenImage('assets/bookmark.png');
-  static const AssetGenImage chat = AssetGenImage('assets/chat.png');
-  static const AssetGenImage chevronLeft =
-      AssetGenImage('assets/chevron-left.png');
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage comment = AssetGenImage('assets/comment.png');
@@ -45,9 +44,8 @@ class Assets {
   /// List of all assets
   List<AssetGenImage> get values => [
         artSchools,
+        backButton,
         bookmark,
-        chat,
-        chevronLeft,
         childrenArtSchools,
         comment,
         courses,
