@@ -17,7 +17,7 @@ class _LearningTestState extends State<LearningTest> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<LearningProvider>(context, listen: true).getData();
+      Provider.of<LearningProvider>(context, listen: false).getData();
     });
   }
 

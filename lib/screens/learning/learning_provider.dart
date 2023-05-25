@@ -2,17 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'models/question.dart';
 
 class QuestionDTO {
-  late String title;
+  late String question;
   late int correctId;
   late List<QuestionAnswersDTO> answers;
 
-  QuestionDTO({required this.title, required this.correctId, required this.answers});
+  QuestionDTO({required this.question, required this.correctId, required this.answers});
 
   factory QuestionDTO.fromJson(Map<String, dynamic> parsedJson) {
     var list = (parsedJson['answers'] ?? []) as List;
     List<QuestionAnswersDTO> dataList = list.map((i) => QuestionAnswersDTO.fromJson(i)).toList();
 
-    return QuestionDTO(title: parsedJson['title'], correctId:  parsedJson['correctId'], answers: dataList);
+    return QuestionDTO(question: parsedJson['question'], correctId:  parsedJson['correctId'], answers: dataList);
   }
 }
 
