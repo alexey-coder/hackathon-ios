@@ -1,106 +1,102 @@
 import 'package:flutter/material.dart';
-import '../../../gen/assets.gen.dart';
-import '../../sheet/organization_type_cell.dart';
+import 'package:maps/gen/assets.gen.dart';
+import 'package:maps/screens/common_widgets/preset_card.dart';
 
 class CategoriesTab extends StatelessWidget {
   const CategoriesTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    var widthWithoutPaddings = MediaQuery.of(context).size.width - 8 * 2;
-
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(8),
-        child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: 8,
-            children: [
-              Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.news.image(
-                            fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.questions.image(
-                        fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    )
-                  ]),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16), // Image border
-                child: SizedBox.fromSize(
-                  size: Size(widthWithoutPaddings, 130), // Image radius
-                  child: Assets.interview.image(
-                  fit: BoxFit.fitWidth
-                  ),
-                ),
-              ),
-              Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // const Padding(padding: EdgeInsets.only(left: 8)),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.wordOfADay.image(fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.talant.image(fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    )
-                  ]),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16), // Image border
-                child: SizedBox.fromSize(
-                  size: Size(widthWithoutPaddings, 130), // Image radius
-                  child: Assets.quiz.image(fit: BoxFit.fitWidth
-                  ),
-                ),
-              ),
-              Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.playlist.image(fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16), // Image border
-                      child: SizedBox.fromSize(
-                        size: Size((widthWithoutPaddings / 2) - 4, 160), // Image radius
-                        child: Assets.interesting.image(fit: BoxFit.fitWidth
-                        ),
-                      ),
-                    )
-                  ],
-              ),
-            ])
-    );
+        padding: const EdgeInsets.all(24),
+        child: Wrap(runSpacing: 8, children: [
+          Row(children: [
+            PresetCard(
+                flex: 1,
+                image: Assets.news.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {}),
+            const SizedBox(width: 8),
+            PresetCard(
+                flex: 1,
+                image: Assets.questions.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {})
+          ]),
+          Row(children: [
+            PresetCard(
+                flex: 327 / 132,
+                image: Assets.interview.image(),
+                itemHeight: 132,
+                onTap: () => {})
+          ]),
+          Row(children: [
+            PresetCard(
+                flex: 1,
+                image: Assets.wordOfADay.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {}),
+            const SizedBox(width: 8),
+            PresetCard(
+                flex: 1,
+                image: Assets.talant.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {})
+          ]),
+          Row(children: [
+            PresetCard(
+                flex: 327 / 132,
+                image: Assets.quiz.image(),
+                itemHeight: 166,
+                onTap: () => {})
+          ]),
+          Row(children: [
+            PresetCard(
+                flex: 1,
+                image: Assets.playlist.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {}),
+            const SizedBox(width: 8),
+            PresetCard(
+                flex: 1,
+                image: Assets.interesting.image(fit: BoxFit.fill),
+                itemHeight: 166,
+                onTap: () => {})
+          ])
+        ]));
+  }
+}
+
+class CategoryCell extends StatelessWidget {
+  final Image image;
+  final void Function()? onPressed;
+
+  const CategoryCell({required this.image, required this.onPressed, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: InkWell(
+            onTap: () => {onPressed?.call()},
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
+            child: AspectRatio(aspectRatio: 1.0, child: image)));
+  }
+}
+
+class SingleCategoryCell extends StatelessWidget {
+  final Image image;
+  final void Function()? onPressed;
+
+  const SingleCategoryCell(
+      {required this.image, required this.onPressed, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        onTap: () => {onPressed?.call()},
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        child: image);
   }
 }
