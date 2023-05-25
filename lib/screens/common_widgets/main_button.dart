@@ -41,7 +41,7 @@ class MainButton extends StatelessWidget  {
       height: 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.red,
+          // foregroundColor: Colors.red,
           backgroundColor: buttonColor.getColor,
             shape: borderColor != null ? _getBorder(borderColor!) : null
         ),
