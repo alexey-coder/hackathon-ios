@@ -47,7 +47,7 @@ class MainButton extends StatelessWidget  {
         ),
         onPressed: press as void Function()?,
         child: Text(
-          text!,
+          text ?? "",
           style: const TextStyle(
             fontSize: 18,
             color: Colors.black,

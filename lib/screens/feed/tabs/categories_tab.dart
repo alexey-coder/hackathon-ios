@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../gen/assets.gen.dart';
-import '../../sheet/organization_type_cell.dart';
 
 class CategoriesTab extends StatelessWidget {
   const CategoriesTab({Key? key}) : super(key: key);
@@ -17,7 +16,6 @@ class CategoriesTab extends StatelessWidget {
             runSpacing: 8,
             children: [
               Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16), // Image border
