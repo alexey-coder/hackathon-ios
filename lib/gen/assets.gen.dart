@@ -51,6 +51,7 @@ class Assets {
   static const AssetGenImage questions = AssetGenImage('assets/questions.png');
   static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
+  static const AssetGenImage settings = AssetGenImage('assets/settings.png');
   static const AssetGenImage talant = AssetGenImage('assets/talant.png');
   static const AssetGenImage theaters = AssetGenImage('assets/theaters.png');
   static const AssetGenImage wordOfADay =
@@ -88,6 +89,7 @@ class Assets {
         questions,
         quiz,
         search,
+        settings,
         talant,
         theaters,
         wordOfADay,
