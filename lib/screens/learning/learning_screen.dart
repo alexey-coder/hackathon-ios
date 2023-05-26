@@ -10,7 +10,7 @@ class LearningScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.watch<LearningProvider>();
+    // final provider = context.watch<LearningProvider>();
 
     return MaterialApp(
         home: Scaffold(
@@ -73,7 +73,7 @@ class LearningScreen extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => LearningTest(),
+              builder: (context) => const LearningTest(),
               fullscreenDialog: true
           ),
         );
