@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maps/providers/sheet_provider.dart';
 import 'package:maps/providers/feed_provider.dart';
+import 'package:maps/screens/courses/courses_provider.dart';
 import 'package:maps/screens/learning/test/learning_test_provider.dart';
 import 'package:maps/screens/splash_screen.dart';
 import 'package:maps/screens/tab_controller.dart';
@@ -17,7 +18,8 @@ void main() {
     ChangeNotifierProvider(create: (_) => TabProvider()),
     ChangeNotifierProvider(create: (_) => FeedProvider()),
     ChangeNotifierProvider(create: (_) => SheetProvider()),
-    ChangeNotifierProvider(create: (_) => LearningTestProvider())
+    ChangeNotifierProvider(create: (_) => LearningTestProvider()),
+    ChangeNotifierProvider(create: (_) => CoursesProvider()),
   ], child: const App()));
 }
 
