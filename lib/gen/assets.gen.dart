@@ -53,6 +53,7 @@ class Assets {
       AssetGenImage('assets/questions.png');
   static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
+  static const AssetGenImage settings = AssetGenImage('assets/settings.png');
   static const AssetGenImage talant = AssetGenImage('assets/talant.png');
   static const AssetGenImage testFinish =
       AssetGenImage('assets/test_finish.png');
@@ -93,6 +94,7 @@ class Assets {
         questionsPng,
         quiz,
         search,
+        settings,
         talant,
         testFinish,
         theaters,

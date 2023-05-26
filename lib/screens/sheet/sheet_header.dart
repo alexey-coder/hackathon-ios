@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/providers/sheet_provider.dart';
+import 'package:maps/screens/common_widgets/filter_button.dart';
 import 'package:maps/screens/common_widgets/search_text_field.dart';
 import 'package:maps/screens/sheet/reset_button.dart';
 import 'package:maps/screens/sheet/shevron.dart';
@@ -38,7 +39,7 @@ class SheetHeader extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 12, left: 24),
                 child: Row(children: [
                   Wrap(spacing: 8, children: [
-                    MapSettingsButton(onPressed: () => {}),
+                    FilterButton(onPressed: () => {}),
                     MapPresetButton(onPressed: () => {}, title: 'Рядом'),
                     MapPresetButton(onPressed: () => {}, title: 'Открыто')
                   ])

@@ -4,6 +4,8 @@ import 'package:maps/providers/feed_provider.dart';
 import 'package:maps/screens/common_widgets/additional_reading/additional_reading_list.dart';
 import 'package:maps/screens/common_widgets/app_bar.dart';
 import 'package:maps/screens/common_widgets/feed_image.dart';
+import 'package:maps/screens/common_widgets/filter_button.dart';
+import 'package:maps/screens/common_widgets/main_button.dart';
 import 'package:provider/provider.dart';
 
 class FeedDetailsScreen extends StatelessWidget {
@@ -47,6 +49,30 @@ class FeedDetailsScreen extends StatelessWidget {
                         fontFamily: FontFamily.deeDee,
                         fontWeight: FontWeight.w400))
               ]),
+              const SizedBox(height: 2),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                const Text('56 комментариев',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                FilterButton(onPressed: () => {})
+              ]),
+              const SizedBox(height: 8),
+              Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: const Color(0xFFD0D0D0)),
+                    color: Colors.white,
+                  ),
+                  constraints: const BoxConstraints(minHeight: 100),
+                  child: const TextField(
+                      decoration: InputDecoration(
+                    hintText: 'Написать комментарий',
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(16),
+                  ))),
+              const SizedBox(height: 8),
+              MainButton(
+                  buttonColor: ButtonColors.mainColor, text: 'Отправить'),
               const SizedBox(height: 16),
               AdditionalReadingList(
                   title: 'Рекомендуем к прочтению',

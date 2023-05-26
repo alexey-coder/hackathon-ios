@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-enum ButtonColors {
-  mainColor, secondary, pale, alert
-}
+enum ButtonColors { mainColor, secondary, pale, alert }
+
 extension on ButtonColors {
   Color get getColor {
     switch (this) {
       case ButtonColors.mainColor:
-        return const Color.fromRGBO(175, 204, 70, 1);
+        return const Color(0xFFAFCC46);
       case ButtonColors.secondary:
         return const Color.fromRGBO(13, 16, 25, 0.06);
       case ButtonColors.pale:
@@ -18,8 +17,8 @@ extension on ButtonColors {
   }
 }
 
-class MainButton extends StatelessWidget  {
-   MainButton({
+class MainButton extends StatelessWidget {
+  MainButton({
     Key? key,
     required this.buttonColor,
     this.borderColor,
@@ -37,14 +36,13 @@ class MainButton extends StatelessWidget  {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? double.infinity ,
+      width: width ?? double.infinity,
       height: 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          // foregroundColor: Colors.red,
-          backgroundColor: buttonColor.getColor,
-            shape: borderColor != null ? _getBorder(borderColor!) : null
-        ),
+            foregroundColor: Colors.red,
+            backgroundColor: buttonColor.getColor,
+            shape: borderColor != null ? _getBorder(borderColor!) : null),
         onPressed: press as void Function()?,
         child: Text(
           text ?? "",
@@ -59,8 +57,6 @@ class MainButton extends StatelessWidget  {
 
   RoundedRectangleBorder _getBorder(Color color) {
     return RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: BorderSide(color: color)
-    );
+        borderRadius: BorderRadius.circular(8), side: BorderSide(color: color));
   }
 }
