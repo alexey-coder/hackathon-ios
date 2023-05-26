@@ -41,6 +41,8 @@ class ArtOfDayTab extends StatelessWidget {
                   MainButton(
                       buttonColor: ButtonColors.secondary,
                       borderColor: null,
+                      activeColor: true,
+                      activeGesture: true,
                       text: "Читать полностью"),
                   // AdditionalDetailsList(
                   //     title: "Смотрите также",

@@ -25,9 +25,14 @@ class Assets {
   static const AssetGenImage cross = AssetGenImage('assets/cross.png');
   static const AssetGenImage danceSchools =
       AssetGenImage('assets/dance_schools.png');
+  static const AssetGenImage easyLesson =
+      AssetGenImage('assets/easy_lesson.png');
   static const AssetGenImage education = AssetGenImage('assets/education.png');
   static const AssetGenImage exhibitions =
       AssetGenImage('assets/exhibitions.png');
+  static const AssetGenImage finished = AssetGenImage('assets/finished.png');
+  static const AssetGenImage hardLesson =
+      AssetGenImage('assets/hard_lesson.png');
   static const AssetGenImage heart = AssetGenImage('assets/heart.png');
   static const AssetGenImage interesting =
       AssetGenImage('assets/interesting.png');
@@ -41,6 +46,8 @@ class Assets {
   static const AssetGenImage mapCross = AssetGenImage('assets/map_cross.png');
   static const AssetGenImage mapSettings =
       AssetGenImage('assets/map_settings.png');
+  static const AssetGenImage mediumLesson =
+      AssetGenImage('assets/medium_lesson.png');
   static const AssetGenImage museums = AssetGenImage('assets/museums.png');
   static const AssetGenImage musicalSchools =
       AssetGenImage('assets/musical_schools.png');
@@ -48,22 +55,18 @@ class Assets {
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage playlist = AssetGenImage('assets/playlist.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
-  static const String questionsJson = 'assets/questions.json';
-  static const AssetGenImage questionsPng =
-      AssetGenImage('assets/questions.png');
+  static const AssetGenImage questions = AssetGenImage('assets/questions.png');
   static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
   static const AssetGenImage settings = AssetGenImage('assets/settings.png');
   static const AssetGenImage talant = AssetGenImage('assets/talant.png');
-  static const AssetGenImage testFinish =
-      AssetGenImage('assets/test_finish.png');
   static const AssetGenImage theaters = AssetGenImage('assets/theaters.png');
   static const AssetGenImage wordOfADay =
       AssetGenImage('assets/word_of_a_day.png');
   static const AssetGenImage xClose = AssetGenImage('assets/x-close.png');
 
   /// List of all assets
-  List<dynamic> get values => [
+  List<AssetGenImage> get values => [
         artSchools,
         award,
         backButton,
@@ -73,8 +76,11 @@ class Assets {
         courses,
         cross,
         danceSchools,
+        easyLesson,
         education,
         exhibitions,
+        finished,
+        hardLesson,
         heart,
         interesting,
         interview,
@@ -84,19 +90,18 @@ class Assets {
         map,
         mapCross,
         mapSettings,
+        mediumLesson,
         museums,
         musicalSchools,
         news,
         pin,
         playlist,
         profile,
-        questionsJson,
-        questionsPng,
+        questions,
         quiz,
         search,
         settings,
         talant,
-        testFinish,
         theaters,
         wordOfADay,
         xClose

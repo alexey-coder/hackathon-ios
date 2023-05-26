@@ -33,8 +33,6 @@ class _LearningTestState extends State<LearningTest> {
   }
 
   MaterialApp _mainWidget(LearningTestProvider provider, BuildContext context) {
-    var questionIndex = provider.currentQuestionIndex;
-
     return MaterialApp(
         home: Scaffold(
             appBar: _createAppBar(
@@ -49,23 +47,25 @@ class _LearningTestState extends State<LearningTest> {
                 child: Padding(
                     padding: const EdgeInsets.all(24),
                     child:
-                    provider.finished ? _finishedWidget(context) : _testWidget(provider),
+                    provider.finished ? _finishedWidget(provider, context) : _testWidget(provider),
                 ))));
   }
 }
 
-Widget _finishedWidget(BuildContext context) {
+Widget _finishedWidget(LearningTestProvider provider, BuildContext context) {
   return Column(
     children: [
       const Spacer(),
-      Assets.testFinish.image(
-        fit: BoxFit.contain,
+      Assets.finished.image(
+        fit: BoxFit.fitWidth,
         width: 300,
       ),
       const Spacer(),
       MainButton(
           buttonColor: ButtonColors.secondary,
           text: "Вернуться к тестам",
+          activeColor: true,
+          activeGesture: true,
           press: () {
             Navigator.pop(context);
           }),
@@ -73,6 +73,8 @@ Widget _finishedWidget(BuildContext context) {
       MainButton(
           buttonColor: ButtonColors.mainColor,
           text: "Следующий",
+          activeColor: true,
+          activeGesture: true,
           press: () {
             Navigator.pop(context);
           }),
@@ -102,8 +104,9 @@ Widget _testWidget(LearningTestProvider provider) {
                 (index) {
               return MainButton(
                 buttonColor: ButtonColors.secondary,
-                text: provider.questions[questionIndex]
-                    .answers[index].value,
+                text: provider.questions[questionIndex].answers[index].value,
+                activeColor: provider.selectedAnswer == index,
+                activeGesture: true,
                 press: () {
                   provider.select(provider
                       .questions[questionIndex]
@@ -116,6 +119,8 @@ Widget _testWidget(LearningTestProvider provider) {
     MainButton(
         buttonColor: ButtonColors.mainColor,
         text: "Далее",
+        activeColor: provider.selectedAnswer != null,
+        activeGesture: provider.selectedAnswer != null,
         press: () {
           provider.nextTapped();
         }),

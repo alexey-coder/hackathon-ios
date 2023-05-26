@@ -6,13 +6,13 @@ extension on ButtonColors {
   Color get getColor {
     switch (this) {
       case ButtonColors.mainColor:
-        return const Color(0xFFAFCC46);
-      case ButtonColors.secondary:
-        return const Color.fromRGBO(13, 16, 25, 0.06);
+        return Color(0xFFAFCC46);
+    case ButtonColors.secondary:
+        return Color.fromRGBO(13, 16, 25, 0.06);
       case ButtonColors.pale:
-        return const Color.fromRGBO(13, 16, 25, 0.03);
+        return Color.fromRGBO(13, 16, 25, 0.03);
       case ButtonColors.alert:
-        return const Color.fromRGBO(204, 70, 70, 1);
+        return Color.fromRGBO(204, 70, 70, 1);
     }
   }
 }
@@ -23,6 +23,8 @@ class MainButton extends StatelessWidget {
     required this.buttonColor,
     this.borderColor,
     required this.text,
+    required this.activeColor,
+    required this.activeGesture,
     this.width,
     this.press,
   }) : super(key: key);
@@ -32,6 +34,8 @@ class MainButton extends StatelessWidget {
   final ButtonColors buttonColor;
   Color? borderColor;
   final double? width;
+  bool activeColor = true;
+  bool activeGesture = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +45,9 @@ class MainButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             foregroundColor: Colors.red,
-            backgroundColor: buttonColor.getColor,
+            backgroundColor: activeColor ? buttonColor.getColor : buttonColor.getColor.withAlpha(30),
             shape: borderColor != null ? _getBorder(borderColor!) : null),
-        onPressed: press as void Function()?,
+        onPressed: activeGesture ? press as void Function()? : null,
         child: Text(
           text ?? "",
           style: const TextStyle(

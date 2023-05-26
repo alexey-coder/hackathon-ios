@@ -21,6 +21,12 @@ class LearningScreen extends StatelessWidget {
                     children: [
                       Column(crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            SizedBox.fromSize(
+                                size: Size(MediaQuery.of(context).size.width, 74), // Image radius
+                                child: Assets.easyLesson.image(
+                                    fit: BoxFit.scaleDown
+                                )
+                            ),
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,6 +41,92 @@ class LearningScreen extends StatelessWidget {
                                  checkImage(context),
                                  const SizedBox(width: 82)
                            ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 164)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 82)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context)
+                                ]),
+                            SizedBox.fromSize(
+                                size: Size(MediaQuery.of(context).size.width, 74), // Image radius
+                                child: Assets.mediumLesson.image(
+                                    fit: BoxFit.scaleDown
+                                )
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 82)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 164)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 82)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context)
+                                ]),
+                            SizedBox.fromSize(
+                                size: Size(MediaQuery.of(context).size.width, 74), // Image radius
+                                child: Assets.hardLesson.image(
+                                    fit: BoxFit.scaleDown
+                                )
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context)
+                                ]),
+                            const SizedBox(height: 8),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  checkImage(context),
+                                  const SizedBox(width: 82)
+                                ]),
                             const SizedBox(height: 8),
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
