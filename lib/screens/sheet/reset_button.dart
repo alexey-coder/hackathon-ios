@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/gen/fonts.gen.dart';
 
 class ResetButton extends StatelessWidget {
