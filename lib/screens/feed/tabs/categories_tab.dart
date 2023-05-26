@@ -19,7 +19,7 @@ class CategoriesTab extends StatelessWidget {
             const SizedBox(width: 8),
             PresetCard(
                 flex: 1,
-                image: Assets.questions.image(fit: BoxFit.fill),
+                image: Assets.questionsPng.image(fit: BoxFit.fill),
                 itemHeight: 166,
                 onTap: () => {})
           ]),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maps/screens/learning/learning_provider.dart';
-import 'package:maps/screens/learning/learning_test.dart';
+import 'package:maps/screens/learning/test/learning_test_provider.dart';
+import 'package:maps/screens/learning/test/learning_test.dart';
 import 'package:provider/provider.dart';
 import '../../gen/assets.gen.dart';
 import '../../gen/fonts.gen.dart';
@@ -10,7 +10,6 @@ class LearningScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final provider = context.watch<LearningProvider>();
 
     return MaterialApp(
         home: Scaffold(

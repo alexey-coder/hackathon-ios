@@ -48,17 +48,21 @@ class Assets {
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage playlist = AssetGenImage('assets/playlist.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
-  static const AssetGenImage questions = AssetGenImage('assets/questions.png');
+  static const String questionsJson = 'assets/questions.json';
+  static const AssetGenImage questionsPng =
+      AssetGenImage('assets/questions.png');
   static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
   static const AssetGenImage talant = AssetGenImage('assets/talant.png');
+  static const AssetGenImage testFinish =
+      AssetGenImage('assets/test_finish.png');
   static const AssetGenImage theaters = AssetGenImage('assets/theaters.png');
   static const AssetGenImage wordOfADay =
       AssetGenImage('assets/word_of_a_day.png');
   static const AssetGenImage xClose = AssetGenImage('assets/x-close.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         artSchools,
         award,
         backButton,
@@ -85,10 +89,12 @@ class Assets {
         pin,
         playlist,
         profile,
-        questions,
+        questionsJson,
+        questionsPng,
         quiz,
         search,
         talant,
+        testFinish,
         theaters,
         wordOfADay,
         xClose
