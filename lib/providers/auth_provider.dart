@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 class AuthProvider extends ChangeNotifier {
   String login = '';
   String password = '';
+  bool passwordHidden = true;
+
+  void reset() {
+    passwordHidden = true;
+  }
 
   void changeLogin(String newValue) {
     login = newValue;
@@ -14,7 +19,15 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void changePasswordHidden() {
+    passwordHidden = !passwordHidden;
+    notifyListeners();
+  }
+
   bool get isLoginButtonEnabled {
-    return login.isNotEmpty && password.isNotEmpty;
+    final bool isEmailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(login);
+    return isEmailValid && login.isNotEmpty && password.length >= 6;
   }
 }

@@ -28,33 +28,16 @@ class SignUpScreen extends StatelessWidget {
                               fontSize: 20,
                               fontWeight: FontWeight.w700)),
                       const SizedBox(height: 16),
-                      Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border:
-                                  Border.all(color: const Color(0xFFD0D0D0)),
-                              color: Colors.white),
-                          constraints: const BoxConstraints(minHeight: 56),
-                          child: TextField(
-                              onChanged: authProvider.changeLogin,
-                              decoration: const InputDecoration(
-                                  hintText: 'Введите логин',
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.all(16)))),
+                      AuthTextField(
+                          hintText: 'Введите логин',
+                          onTextChange: authProvider.changeLogin),
                       const SizedBox(height: 8),
-                      Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border:
-                                  Border.all(color: const Color(0xFFD0D0D0)),
-                              color: Colors.white),
-                          constraints: const BoxConstraints(minHeight: 56),
-                          child: TextField(
-                              onChanged: authProvider.changePassword,
-                              decoration: const InputDecoration(
-                                  hintText: 'Введите пароль',
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.all(16)))),
+                      PasswordTextField(
+                          hintText: 'Введите пароль',
+                          passwordHidden: authProvider.passwordHidden,
+                          onTextChange: authProvider.changePassword,
+                          onPasswordHiddenChange:
+                              authProvider.changePasswordHidden),
                       const SizedBox(height: 40),
                       MainButton(
                           backgroundColor: authProvider.isLoginButtonEnabled
@@ -74,6 +57,7 @@ class SignUpScreen extends StatelessWidget {
                                   fontSize: 16, color: Color(0xFF121212))),
                           TextButton(
                               onPressed: () => {
+                                    authProvider.reset(),
                                     Navigator.of(context)
                                         .pushReplacement(MaterialPageRoute(
                                             fullscreenDialog: true,

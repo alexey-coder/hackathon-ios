@@ -76,6 +76,10 @@ class Assets {
   static const AssetGenImage musicalSchools =
       AssetGenImage('assets/musical_schools.png');
   static const AssetGenImage news = AssetGenImage('assets/news.png');
+  static const AssetGenImage passwordHidden =
+      AssetGenImage('assets/password_hidden.png');
+  static const AssetGenImage passwordShown =
+      AssetGenImage('assets/password_shown.png');
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage playButton =
       AssetGenImage('assets/play_button.png');
@@ -136,6 +140,8 @@ class Assets {
         museums,
         musicalSchools,
         news,
+        passwordHidden,
+        passwordShown,
         pin,
         playButton,
         playlist,
