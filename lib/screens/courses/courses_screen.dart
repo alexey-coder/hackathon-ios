@@ -75,7 +75,14 @@ class CoursesScreen extends StatelessWidget {
                                     title: "title",
                                     description: "description"
                                 ),
-                                onTap: () { },
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const CoursesDetailsScreen(
+                                              title: "title",
+                                              courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg")));
+                                },
                                 width: MediaQuery.of(context).size.width / 2 - 24 - 8),
                             const SizedBox(width: 16),
                             CoursesHalfWidthCell(
@@ -85,7 +92,14 @@ class CoursesScreen extends StatelessWidget {
                                     title: "title",
                                     description: "description"
                                 ),
-                                onTap: () { },
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const CoursesDetailsScreen(
+                                              title: "title",
+                                              courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg")));
+                                },
                                 width: MediaQuery.of(context).size.width / 2 - 24 - 8)
                         ])
                       ]),

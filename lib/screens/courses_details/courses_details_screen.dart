@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../gen/assets.gen.dart';
 import '../common_widgets/app_bar.dart';
 import '../common_widgets/progress.dart';
+import 'courses_details_provider.dart';
+import 'courses_details_table_of_content.dart';
 
 class CoursesDetailsScreen extends StatelessWidget {
   const CoursesDetailsScreen(
@@ -14,7 +17,7 @@ class CoursesDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var provider = context.watch<CoursesDetailsProvider>();
+    var provider = context.watch<CoursesDetailsProvider>();
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -41,6 +44,9 @@ class CoursesDetailsScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 freeCourseWidget(),
                 const SizedBox(height: 32),
+                CoursesDetailsTableOfContent(
+                  title: "Программа курса",
+                  viewModels: provider.tableOfContentViewModels)
               ])
             ]));
   }
