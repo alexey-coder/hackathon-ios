@@ -3,7 +3,7 @@ import 'package:maps/app_tab_bar.dart';
 import 'package:maps/screens/feed/feed_screen.dart';
 import 'package:maps/screens/map/map_screen.dart';
 import 'package:maps/providers/tab_provider.dart';
-import 'package:maps/screens/profile_screen.dart';
+import 'package:maps/screens/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'learning/learning_screen.dart';
