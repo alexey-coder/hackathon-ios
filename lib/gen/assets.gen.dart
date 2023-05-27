@@ -22,6 +22,18 @@ class Assets {
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage comment = AssetGenImage('assets/comment.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
+  static const AssetGenImage coursesArt =
+      AssetGenImage('assets/courses_art.png');
+  static const AssetGenImage coursesBalley =
+      AssetGenImage('assets/courses_balley.png');
+  static const AssetGenImage coursesDance =
+      AssetGenImage('assets/courses_dance.png');
+  static const AssetGenImage coursesMusic =
+      AssetGenImage('assets/courses_music.png');
+  static const AssetGenImage coursesRitmology =
+      AssetGenImage('assets/courses_ritmology.png');
+  static const AssetGenImage coursesVocal =
+      AssetGenImage('assets/courses_vocal.png');
   static const AssetGenImage cross = AssetGenImage('assets/cross.png');
   static const AssetGenImage danceSchools =
       AssetGenImage('assets/dance_schools.png');
@@ -77,6 +89,12 @@ class Assets {
         childrenArtSchools,
         comment,
         courses,
+        coursesArt,
+        coursesBalley,
+        coursesDance,
+        coursesMusic,
+        coursesRitmology,
+        coursesVocal,
         cross,
         danceSchools,
         easyLesson,

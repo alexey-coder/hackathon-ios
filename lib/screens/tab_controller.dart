@@ -6,6 +6,7 @@ import 'package:maps/providers/tab_provider.dart';
 import 'package:maps/screens/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 
+import 'courses/courses_screen.dart';
 import 'learning/learning_screen.dart';
 
 class MyTabController extends StatelessWidget {
@@ -26,7 +27,7 @@ class MyTabController extends StatelessWidget {
       case MyTab.teaching:
         return const LearningScreen();
       case MyTab.courses:
-        return const Text('Курсы');
+        return const CoursesScreen();
       case MyTab.map:
         return MapScreen();
       case MyTab.profile:
