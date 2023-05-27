@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/screens/auth/login_screen.dart';
+import 'package:maps/screens/auth/sign_up_screen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -30,18 +31,29 @@ class AuthScreen extends StatelessWidget {
                           backgroundColor: const Color(0xFFAFCC46),
                           text: 'Войти',
                           onPressed: () => {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const LoginScreen()))
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    fullscreenDialog: true,
+                                    builder: (context) {
+                                      return const LoginScreen();
+                                    }))
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) =>
+                                //             const LoginScreen()))
                               }),
                       const SizedBox(height: 8),
                       MainButton(
                           backgroundColor:
                               const Color(0xFF0D1019).withAlpha(10),
                           text: 'Зарегистрироваться',
-                          onPressed: () => {}),
+                          onPressed: () => {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    fullscreenDialog: true,
+                                    builder: (context) {
+                                      return const SignUpScreen();
+                                    }))
+                              }),
                       const SizedBox(height: 40),
                       Stack(children: [
                         Container(

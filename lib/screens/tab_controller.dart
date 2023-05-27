@@ -32,9 +32,7 @@ class MyTabController extends StatelessWidget {
       case MyTab.map:
         return MapScreen();
       case MyTab.profile:
-        return Navigator(onGenerateRoute: (settings) {
-          return MaterialPageRoute(builder: (_) => const AuthScreen());
-        });
+        return const AuthScreen();
       // const AuthScreen(); //ProfileScreen();
     }
   }

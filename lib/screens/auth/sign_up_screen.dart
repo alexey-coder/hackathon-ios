@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:maps/providers/auth_provider.dart';
-import 'package:maps/screens/auth/sign_up_screen.dart';
+import 'package:maps/screens/auth/login_screen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Text('Авторизация',
+                      const Text('Регистрация',
                           style: TextStyle(
                               color: Color(0xFF121212),
                               fontSize: 20,
@@ -69,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('Нет аккаунта?',
+                          const Text('Есть аккаунт?',
                               style: TextStyle(
                                   fontSize: 16, color: Color(0xFF121212))),
                           TextButton(
@@ -78,10 +78,10 @@ class LoginScreen extends StatelessWidget {
                                         .pushReplacement(MaterialPageRoute(
                                             fullscreenDialog: true,
                                             builder: (context) {
-                                              return const SignUpScreen();
+                                              return const LoginScreen();
                                             }))
                                   },
-                              child: const Text('Зарегистрироваться',
+                              child: const Text('Авторизоваться',
                                   style: TextStyle(
                                       fontSize: 16,
                                       color: Color(0xFF121212),
