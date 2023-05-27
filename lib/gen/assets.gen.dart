@@ -12,6 +12,8 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage ach1 = AssetGenImage('assets/ach_1.png');
+  static const AssetGenImage ach2 = AssetGenImage('assets/ach_2.png');
   static const AssetGenImage artSchools =
       AssetGenImage('assets/art_schools.png');
   static const AssetGenImage award = AssetGenImage('assets/award.png');
@@ -82,6 +84,8 @@ class Assets {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        ach1,
+        ach2,
         artSchools,
         award,
         backButton,

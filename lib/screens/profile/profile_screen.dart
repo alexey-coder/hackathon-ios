@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/profile/profile_achievement.dart';
 import 'package:maps/screens/profile/profile_courses_section.dart';
 import 'package:maps/screens/profile/profile_header.dart';
 import 'package:maps/screens/profile/profile_stats_card.dart';
@@ -12,7 +13,8 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SafeArea(
             child: ListView(
-                padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+                padding: const EdgeInsets.only(
+                    left: 24, right: 24, top: 24, bottom: 12),
                 children: [
               const ProfileHeader(),
               const SizedBox(height: 16),
@@ -31,6 +33,7 @@ class ProfileScreen extends StatelessWidget {
                 ProfileStatsCard(
                     title: '3', subtite: 'Награды', onTap: () => {})
               ]),
+              const AchievementsSection(),
               const ProfileCoursesSection()
             ])));
   }

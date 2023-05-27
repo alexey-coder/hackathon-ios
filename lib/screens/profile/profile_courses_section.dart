@@ -29,6 +29,7 @@ class ProfileCoursesSection extends StatelessWidget {
                   bigLabel: 'Думай как художник',
                   progress: 0.7,
                   progressTitle: '4 из 6 уроков')),
+          const SizedBox(height: 8),
           LearningProgressCard(
               viewModel: LearningProgressCardViewModel(
                   imageUrl:
@@ -37,6 +38,7 @@ class ProfileCoursesSection extends StatelessWidget {
                   bigLabel: 'Русское искусство как живопись',
                   progress: 0.3,
                   progressTitle: '2 из 5 уроков')),
+          const SizedBox(height: 8),
           LearningProgressCard(
               viewModel: LearningProgressCardViewModel(
                   imageUrl:
