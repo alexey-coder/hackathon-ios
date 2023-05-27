@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/common_widgets/header_section.dart';
 import 'package:maps/screens/common_widgets/learning_progress_card.dart';
 
 class ProfileCoursesSection extends StatelessWidget {
@@ -9,17 +10,7 @@ class ProfileCoursesSection extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(top: 30),
         child: Column(children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            const Text('Я изучаю',
-                style: TextStyle(
-                    color: Color(0xFF121212),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700)),
-            TextButton(
-                onPressed: () => {},
-                child: const Text('Смотреть все',
-                    style: TextStyle(color: Color(0xFF121212), fontSize: 14)))
-          ]),
+          HeaderSection(title: 'Я изучаю', onPressed: () => {}),
           const SizedBox(height: 16),
           LearningProgressCard(
               viewModel: LearningProgressCardViewModel(
