@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:maps/screens/common_widgets/progress.dart';
 
 import '../../gen/fonts.gen.dart';
 
@@ -74,28 +75,11 @@ class LearningProgressCard extends StatelessWidget {
                           color: Color.fromRGBO(60, 60, 59, 1)
               )),
                   const SizedBox(height: 4),
-                  _createProgress(progress: 0.5)
+                  const HorizontalProgress(progress: 0.5, width: double.infinity, height: 9)
                 ],
               )
             ])),
       ]));
-  }
-
-  Container _createProgress({required double progress}) {
-    return Container(
-      width: double.infinity,
-      height: 9,
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-        child: LinearProgressIndicator(
-          value: progress,
-          valueColor: const AlwaysStoppedAnimation<Color>(
-              Color.fromRGBO(175, 204, 70, 1)
-        ),
-          backgroundColor: const Color.fromRGBO(237, 237, 237, 1),
-        ),
-      ),
-    );
   }
 }
 

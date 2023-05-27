@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/screens/courses/courses_provider.dart';
+import 'package:maps/screens/courses_details/courses_details_screen.dart';
 import 'package:provider/provider.dart';
 import '../../gen/assets.gen.dart';
 import '../../gen/fonts.gen.dart';
@@ -7,6 +8,8 @@ import '../common_widgets/learning_progress_card.dart';
 import '../common_widgets/preset_card.dart';
 import '../common_widgets/search_text_field.dart';
 import '../common_widgets/section_see_all_header.dart';
+import 'courses_full_width_cell.dart';
+import 'courses_half_width_cell.dart';
 
 class CoursesScreen extends StatelessWidget {
   const CoursesScreen({Key? key}) : super(key: key);
@@ -42,20 +45,46 @@ class CoursesScreen extends StatelessWidget {
                       SectionSeeAllHeader(text: "Вебинар", press: () {}),
                       const SizedBox(height: 24),
                       SectionSeeAllHeader(text: "Рекомендации", press: () {}),
-                      Wrap(runSpacing: 8, children: [
+                      const SizedBox(height: 16),
                         Row(children: [
-                          PresetCard(
-                              flex: 327 / 180,
-                              image: Assets.coursesBalley.image(),
-                              itemHeight: 180,
-                              onTap: () => {})
+                          CoursesFullWidthCell(
+                            viewModel: CoursesViewModel(
+                                courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                numberOfLessons: "8 уроков",
+                                title: "title", description: "description"
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const CoursesDetailsScreen(
+                                          title: "title",
+                                          courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg")));
+                            },
+                            width: MediaQuery.of(context).size.width - (24 * 2))
                         ]),
-                        Row(children: [
-                          _verticalCard(Assets.coursesRitmology.image()),
-                          const SizedBox(width: 8),
-                          _verticalCard(Assets.coursesVocal.image()),
+                      const SizedBox(height: 16),
+                      Row(children: [
+                          CoursesHalfWidthCell(
+                              viewModel: CoursesViewModel(
+                                  courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                  numberOfLessons: "8 уроков",
+                                  title: "title",
+                                  description: "description"
+                              ),
+                              onTap: () { },
+                            width: MediaQuery.of(context).size.width / 2 - 24 - 8),
+                          const SizedBox(width: 16),
+                          CoursesHalfWidthCell(
+                              viewModel: CoursesViewModel(
+                                  courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                  numberOfLessons: "8 уроков",
+                                  title: "title",
+                                  description: "description"
+                              ),
+                              onTap: () { },
+                            width: MediaQuery.of(context).size.width / 2 - 24 - 8)
                         ]),
-                      ]),
                       const SizedBox(height: 24),
                       SectionSeeAllHeader(
                           text: "Категории курсов", press: () {}),
@@ -85,20 +114,39 @@ class CoursesScreen extends StatelessWidget {
                       ]),
                       const SizedBox(height: 24),
                       SectionSeeAllHeader(text: "Новые курсы", press: () {}),
-                      Wrap(runSpacing: 8, children: [
-                        Row(children: [
-                          PresetCard(
-                              flex: 327 / 180,
-                              image: Assets.coursesBalley.image(),
-                              itemHeight: 180,
-                              onTap: () => {})
-                        ]),
-                        Row(children: [
-                          _verticalCard(Assets.coursesRitmology.image()),
-                          const SizedBox(width: 8),
-                          _verticalCard(Assets.coursesVocal.image()),
-                        ]),
-                      ])
+                      const SizedBox(height: 16),
+                      Row(children: [
+                        CoursesFullWidthCell(
+                            viewModel: CoursesViewModel(
+                                courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                numberOfLessons: "8 уроков",
+                                title: "title", description: "description"
+                            ),
+                            onTap: () { },
+                            width: MediaQuery.of(context).size.width - (24 * 2))
+                      ]),
+                      const SizedBox(height: 16),
+                      Row(children: [
+                        CoursesHalfWidthCell(
+                            viewModel: CoursesViewModel(
+                                courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                numberOfLessons: "8 уроков",
+                                title: "title",
+                                description: "description"
+                            ),
+                            onTap: () { },
+                            width: MediaQuery.of(context).size.width / 2 - 24 - 8),
+                        const SizedBox(width: 16),
+                        CoursesHalfWidthCell(
+                            viewModel: CoursesViewModel(
+                                courseImageUrl: "https://mobimg.b-cdn.net/v3/fetch/97/971c4fa26dc80fe5079a43a788e18888.jpeg",
+                                numberOfLessons: "8 уроков",
+                                title: "title",
+                                description: "description"
+                            ),
+                            onTap: () { },
+                            width: MediaQuery.of(context).size.width / 2 - 24 - 8)
+                      ]),
                     ])))));
   }
 

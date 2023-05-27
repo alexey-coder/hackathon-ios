@@ -22,12 +22,18 @@ class Assets {
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage comment = AssetGenImage('assets/comment.png');
   static const AssetGenImage courses = AssetGenImage('assets/courses.png');
+  static const AssetGenImage coursesAnatomy =
+      AssetGenImage('assets/courses_anatomy.png');
+  static const AssetGenImage coursesAquarel =
+      AssetGenImage('assets/courses_aquarel.png');
   static const AssetGenImage coursesArt =
       AssetGenImage('assets/courses_art.png');
   static const AssetGenImage coursesBalley =
       AssetGenImage('assets/courses_balley.png');
   static const AssetGenImage coursesDance =
       AssetGenImage('assets/courses_dance.png');
+  static const AssetGenImage coursesExpression =
+      AssetGenImage('assets/courses_expression.png');
   static const AssetGenImage coursesMusic =
       AssetGenImage('assets/courses_music.png');
   static const AssetGenImage coursesRitmology =
@@ -86,9 +92,12 @@ class Assets {
         childrenArtSchools,
         comment,
         courses,
+        coursesAnatomy,
+        coursesAquarel,
         coursesArt,
         coursesBalley,
         coursesDance,
+        coursesExpression,
         coursesMusic,
         coursesRitmology,
         coursesVocal,
