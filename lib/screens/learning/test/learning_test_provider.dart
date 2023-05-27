@@ -19,6 +19,10 @@ class LearningTestProvider extends ChangeNotifier {
 
   Future<void> getData() async {
     questions = qestionsjson.map((i) => QuestionDTO.fromJson(i)).toList();
+    totalCorrect = 0;
+    currentQuestionIndex = 0;
+    finished = false;
+    selectedAnswer = null;
     notifyListeners();
   }
 
@@ -31,6 +35,7 @@ class LearningTestProvider extends ChangeNotifier {
   void nextTapped() {
     if (selectedAnswer == questions[currentQuestionIndex].correctId) {
       print(" =) ");
+      totalCorrect += 1;
     } else {
       print(" =( ");
     }
@@ -38,7 +43,7 @@ class LearningTestProvider extends ChangeNotifier {
     if (currentQuestionIndex + 1 == questions.length) {
       finished = true;
     } else {
-      currentQuestionIndex ++;
+      currentQuestionIndex++;
       selectedAnswer = null;
     }
     notifyListeners();

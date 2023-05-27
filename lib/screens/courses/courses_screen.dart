@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
-import 'package:maps/gen/fonts.gen.dart';
 import 'package:maps/screens/common_widgets/header_section.dart';
 import 'package:maps/screens/common_widgets/learning_progress_card.dart';
 import 'package:maps/screens/common_widgets/preset_card.dart';

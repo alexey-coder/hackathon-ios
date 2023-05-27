@@ -72,7 +72,9 @@ class FeedDetailsScreen extends StatelessWidget {
                   ))),
               const SizedBox(height: 8),
               MainButton(
-                  buttonColor: ButtonColors.mainColor, activeColor: true, activeGesture: true, text: 'Отправить'),
+                  backgroundColor: const Color(0xFFAFCC46),
+                  onPressed: () => {},
+                  text: 'Отправить'),
               const SizedBox(height: 16),
               AdditionalReadingList(
                   title: 'Рекомендуем к прочтению',
