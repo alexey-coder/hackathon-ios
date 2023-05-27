@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/providers/auth_provider.dart';
+import 'package:maps/screens/auth/auth_text_field.dart';
+import 'package:maps/screens/auth/password_text_field.dart';
 import 'package:maps/screens/auth/sign_up_screen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SafeArea(
             child: Padding(
-                padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+                padding: const EdgeInsets.only(left: 24, right: 24),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -31,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       AuthTextField(
                           hintText: 'Введите логин',
-                          onTextChange: authProvider.changeLogin),
+                          onTextChange: authProvider.changeEmail),
                       const SizedBox(height: 8),
                       PasswordTextField(
                           hintText: 'Введите пароль',
@@ -73,69 +74,5 @@ class LoginScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w600)))
                           ])
                     ]))));
-  }
-}
-
-class AuthTextField extends StatelessWidget {
-  const AuthTextField(
-      {Key? key, required this.hintText, required this.onTextChange})
-      : super(key: key);
-
-  final String hintText;
-  final void Function(String) onTextChange;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: const Color(0xFFD0D0D0)),
-            color: Colors.white),
-        constraints: const BoxConstraints(minHeight: 56),
-        child: TextField(
-            onChanged: onTextChange,
-            decoration: const InputDecoration(
-                hintText: 'Введите логин',
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.all(16))));
-  }
-}
-
-class PasswordTextField extends StatelessWidget {
-  const PasswordTextField(
-      {Key? key,
-      required this.passwordHidden,
-      required this.hintText,
-      required this.onTextChange,
-      required this.onPasswordHiddenChange})
-      : super(key: key);
-
-  final bool passwordHidden;
-  final String hintText;
-  final void Function(String) onTextChange;
-  final VoidCallback onPasswordHiddenChange;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: const Color(0xFFD0D0D0)),
-            color: Colors.white),
-        constraints: const BoxConstraints(minHeight: 56),
-        child: TextField(
-            onChanged: onTextChange,
-            obscureText: passwordHidden,
-            decoration: InputDecoration(
-                suffixIcon: IconButton(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onPressed: onPasswordHiddenChange,
-                    icon: passwordHidden
-                        ? Assets.passwordHidden.image()
-                        : Assets.passwordShown.image()),
-                hintText: hintText,
-                border: InputBorder.none,
-                contentPadding: const EdgeInsets.all(16))));
   }
 }
