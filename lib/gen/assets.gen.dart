@@ -77,6 +77,8 @@ class Assets {
       AssetGenImage('assets/musical_schools.png');
   static const AssetGenImage news = AssetGenImage('assets/news.png');
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
+  static const AssetGenImage playButton =
+      AssetGenImage('assets/play_button.png');
   static const AssetGenImage playlist = AssetGenImage('assets/playlist.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
   static const AssetGenImage profilePhoto =
@@ -135,6 +137,7 @@ class Assets {
         musicalSchools,
         news,
         pin,
+        playButton,
         playlist,
         profile,
         profilePhoto,
