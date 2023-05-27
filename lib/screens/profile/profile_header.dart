@@ -38,7 +38,6 @@ class ProfileHeader extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 12, right: 12),
                       child: Row(children: [
                         Assets.level.image(width: 48, height: 48),
-                        const SizedBox(width: 12),
                         const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
