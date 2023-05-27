@@ -25,7 +25,7 @@ class CoursesDetailsTableOfContent extends StatelessWidget {
                 Navigator.push(
                     context,
                 MaterialPageRoute(
-                    builder: (context) => const CoursesVideoLesson())
+                    builder: (context) => CoursesVideoLesson())
                 );
               }),
           separatorBuilder: (context, index) => const SizedBox(height: 16),
