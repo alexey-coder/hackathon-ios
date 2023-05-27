@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maps/gen/assets.gen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
+import 'package:maps/screens/common_widgets/progress.dart';
 import 'package:maps/screens/learning/test/learning_test_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -89,23 +90,6 @@ Widget _testWidget(LearningTestProvider provider) {
       ]));
 }
 
-Container _createProgress({required double progress}) {
-  return Container(
-    margin: const EdgeInsets.symmetric(vertical: 20),
-    width: 200,
-    height: 16,
-    child: ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      child: LinearProgressIndicator(
-        value: progress,
-        valueColor: const AlwaysStoppedAnimation<Color>(
-            Color.fromRGBO(116, 176, 118, 1)),
-        backgroundColor: const Color.fromRGBO(237, 237, 237, 1),
-      ),
-    ),
-  );
-}
-
 AppBar _createAppBar(
     {required BuildContext context,
     required double progress,
@@ -120,7 +104,7 @@ AppBar _createAppBar(
       centerTitle: true,
       title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         const Spacer(),
-        _createProgress(progress: progress),
+        HorizontalProgress(progress: progress, width: 200, height: 16),
         const Spacer(),
         Assets.award.image(width: 24, height: 24),
         Text(awardValue.toString(),
