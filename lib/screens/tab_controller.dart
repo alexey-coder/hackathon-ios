@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps/app_tab_bar.dart';
+import 'package:maps/screens/auth/auth_screen.dart';
 import 'package:maps/screens/feed/feed_screen.dart';
 import 'package:maps/screens/map/map_screen.dart';
 import 'package:maps/providers/tab_provider.dart';
@@ -31,7 +32,7 @@ class MyTabController extends StatelessWidget {
       case MyTab.map:
         return MapScreen();
       case MyTab.profile:
-        return const ProfileScreen();
+        return const AuthScreen(); //ProfileScreen();
     }
   }
 }
