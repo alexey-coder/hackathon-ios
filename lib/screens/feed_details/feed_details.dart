@@ -59,17 +59,15 @@ class FeedDetailsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: const Color(0xFFD0D0D0)),
-                    color: Colors.white,
-                  ),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xFFD0D0D0)),
+                      color: Colors.white),
                   constraints: const BoxConstraints(minHeight: 100),
                   child: const TextField(
                       decoration: InputDecoration(
-                    hintText: 'Написать комментарий',
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.all(16),
-                  ))),
+                          hintText: 'Написать комментарий',
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.all(16)))),
               const SizedBox(height: 8),
               MainButton(
                   backgroundColor: const Color(0xFFAFCC46),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/screens/auth/login_screen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -28,7 +29,13 @@ class AuthScreen extends StatelessWidget {
                       MainButton(
                           backgroundColor: const Color(0xFFAFCC46),
                           text: 'Войти',
-                          onPressed: () => {}),
+                          onPressed: () => {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LoginScreen()))
+                              }),
                       const SizedBox(height: 8),
                       MainButton(
                           backgroundColor:

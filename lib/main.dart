@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps/providers/auth_provider.dart';
 import 'package:maps/providers/sheet_provider.dart';
 import 'package:maps/providers/feed_provider.dart';
 import 'package:maps/screens/courses/courses_provider.dart';
@@ -21,7 +22,8 @@ void main() {
     ChangeNotifierProvider(create: (_) => SheetProvider()),
     ChangeNotifierProvider(create: (_) => LearningTestProvider()),
     ChangeNotifierProvider(create: (_) => CoursesProvider()),
-    ChangeNotifierProvider(create: (_) => CoursesDetailsProvider())
+    ChangeNotifierProvider(create: (_) => CoursesDetailsProvider()),
+    ChangeNotifierProvider(create: (_) => AuthProvider())
   ], child: const App()));
 }
 
