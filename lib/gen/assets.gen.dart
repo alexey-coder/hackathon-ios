@@ -41,6 +41,7 @@ class Assets {
       AssetGenImage('assets/learnCheck.png');
   static const AssetGenImage learningCheck =
       AssetGenImage('assets/learning_check.png');
+  static const AssetGenImage level = AssetGenImage('assets/level.png');
   static const AssetGenImage main = AssetGenImage('assets/main.png');
   static const AssetGenImage map = AssetGenImage('assets/map.png');
   static const AssetGenImage mapCross = AssetGenImage('assets/map_cross.png');
@@ -55,6 +56,8 @@ class Assets {
   static const AssetGenImage pin = AssetGenImage('assets/pin.png');
   static const AssetGenImage playlist = AssetGenImage('assets/playlist.png');
   static const AssetGenImage profile = AssetGenImage('assets/profile.png');
+  static const AssetGenImage profilePhoto =
+      AssetGenImage('assets/profile_photo.png');
   static const AssetGenImage questions = AssetGenImage('assets/questions.png');
   static const AssetGenImage quiz = AssetGenImage('assets/quiz.png');
   static const AssetGenImage search = AssetGenImage('assets/search.png');
@@ -86,6 +89,7 @@ class Assets {
         interview,
         learnCheck,
         learningCheck,
+        level,
         main,
         map,
         mapCross,
@@ -97,6 +101,7 @@ class Assets {
         pin,
         playlist,
         profile,
+        profilePhoto,
         questions,
         quiz,
         search,
