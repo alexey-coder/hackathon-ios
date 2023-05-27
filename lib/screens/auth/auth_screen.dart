@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:maps/providers/auth_provider.dart';
 import 'package:maps/screens/auth/login_screen.dart';
 import 'package:maps/screens/auth/sign_up_screen.dart';
 import 'package:maps/screens/common_widgets/main_button.dart';
+import 'package:provider/provider.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var authProvider = context.read<AuthProvider>();
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -31,16 +34,12 @@ class AuthScreen extends StatelessWidget {
                           backgroundColor: const Color(0xFFAFCC46),
                           text: 'Войти',
                           onPressed: () => {
+                                authProvider.reset(),
                                 Navigator.of(context).push(MaterialPageRoute(
                                     fullscreenDialog: true,
                                     builder: (context) {
                                       return const LoginScreen();
                                     }))
-                                // Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //         builder: (context) =>
-                                //             const LoginScreen()))
                               }),
                       const SizedBox(height: 8),
                       MainButton(
@@ -48,6 +47,7 @@ class AuthScreen extends StatelessWidget {
                               const Color(0xFF0D1019).withAlpha(10),
                           text: 'Зарегистрироваться',
                           onPressed: () => {
+                                authProvider.reset(),
                                 Navigator.of(context).push(MaterialPageRoute(
                                     fullscreenDialog: true,
                                     builder: (context) {

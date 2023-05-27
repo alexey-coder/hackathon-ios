@@ -11,6 +11,11 @@ class AuthProvider extends ChangeNotifier {
 
   void reset() {
     passwordHidden = true;
+    selectedBirthDate = null;
+    login = '';
+    email = '';
+    password = '';
+    repeatPassword = '';
   }
 
   void changeLogin(String newValue) {
