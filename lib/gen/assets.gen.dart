@@ -20,6 +20,8 @@ class Assets {
   static const AssetGenImage backButton =
       AssetGenImage('assets/back_button.png');
   static const AssetGenImage bookmark = AssetGenImage('assets/bookmark.png');
+  static const AssetGenImage championcup =
+      AssetGenImage('assets/championcup.png');
   static const AssetGenImage childrenArtSchools =
       AssetGenImage('assets/children_art_schools.png');
   static const AssetGenImage comment = AssetGenImage('assets/comment.png');
@@ -96,6 +98,7 @@ class Assets {
         award,
         backButton,
         bookmark,
+        championcup,
         childrenArtSchools,
         comment,
         courses,
