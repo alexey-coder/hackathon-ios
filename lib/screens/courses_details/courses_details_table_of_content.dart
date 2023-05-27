@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../gen/assets.gen.dart';
 import '../../gen/fonts.gen.dart';
 import '../common_widgets/main_title.dart';
+import '../courses_video_lesson/courses_video_lesson.dart';
 
 class CoursesDetailsTableOfContent extends StatelessWidget {
   const CoursesDetailsTableOfContent(
@@ -20,7 +21,13 @@ class CoursesDetailsTableOfContent extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (_, index) =>
-              TableOfContentCell(viewModel: viewModels[index]),
+              TableOfContentCell(viewModel: viewModels[index], onPressed: () {
+                Navigator.push(
+                    context,
+                MaterialPageRoute(
+                    builder: (context) => const CoursesVideoLesson())
+                );
+              }),
           separatorBuilder: (context, index) => const SizedBox(height: 16),
           itemCount: viewModels.length),
       const SizedBox(height: 32)
@@ -38,14 +45,20 @@ class TableOfContentViewModel {
 }
 
 class TableOfContentCell extends StatelessWidget {
-  const TableOfContentCell({Key? key, required this.viewModel})
-      : super(key: key);
+  const TableOfContentCell({
+    Key? key,
+    required this.viewModel,
+    required this.onPressed
+  }) : super(key: key);
 
   final TableOfContentViewModel viewModel;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return InkWell(
+        onTap: onPressed,
+        child: Column(children: [
       Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
        Assets.bookStack.image(width: 62, height: 62, fit: BoxFit.fill),
         const SizedBox(width: 8),
@@ -76,6 +89,6 @@ class TableOfContentCell extends StatelessWidget {
       ]),
       const SizedBox(height: 16),
       Container(color: const Color(0xFFEDEDED), height: 1)
-    ]);
+    ]));
   }
 }
