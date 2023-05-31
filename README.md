@@ -1,16 +1,10 @@
 # hackathon
+Проект написан на flutter SDK. Будет работать на ios/android симуляторах и устройствах.
 
-A new Flutter project.
+для запуска необходимо склонить проект (git clone git@github.com:alexey-coder/hackathon-ios.git)
+перейти в папку с проектом (cd hackathon-ios)
+встать на ветку map (git checkout map)
+выполнить команду flutter run в терминале
+подождать пока проект запустится.... 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+так же возможно запустить через android studio или VScode
